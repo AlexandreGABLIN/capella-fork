@@ -67,7 +67,7 @@ public class MDCHKFunctionPortExchangeItemAllocationConsistency extends Abstract
 				if (!isOk && !components.isEmpty()) {
 					String FUNCTION_PREFIXE = NLS.bind(Messages.FunctionPrefix_0, functionPort.getName(), functionPort.eClass().getName());
  				    Component component = (Component)components.toArray()[0];
-					String COMPONENT_PREFIXE = NLS.bind(Messages.FunctionPrefix_0, component.getName(), component.eClass().getName());
+					String COMPONENT_PREFIXE = NLS.bind(Messages.ComponentPrefix_0, component.getName(), component.eClass().getName());
 					
 					return createFailureStatus(context, new Object[] { FUNCTION_PREFIXE, COMPONENT_PREFIXE});
 					 

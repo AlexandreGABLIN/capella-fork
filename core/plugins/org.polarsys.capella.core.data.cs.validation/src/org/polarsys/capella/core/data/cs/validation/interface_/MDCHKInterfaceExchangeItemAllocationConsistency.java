@@ -23,7 +23,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.emf.validation.model.ConstraintStatus;
-
+import org.eclipse.osgi.util.NLS;
 import org.polarsys.capella.core.data.cs.Component;
 import org.polarsys.capella.core.data.cs.Interface;
 import org.polarsys.capella.core.data.fa.AbstractFunction;
@@ -78,8 +78,8 @@ public class MDCHKInterfaceExchangeItemAllocationConsistency extends AbstractVal
 					Collection<Interface> interfaces = ComponentExt.getRelatedInterfaces(currentComponent);
 					boolean isOK =  interfaces.contains(interfaze) && relatedComponentExchangeItems.containsAll(interfaceExchangeItems);
 					if (!isOK) {
-						String COMPONENT_PREFIX = "\"" + currentComponent.getName()  +"\" ( "+ currentComponent.eClass().getName()+ " ) ";
-						String INTARFACE_PREFIX = "\"" + interfaze.getName()  +"\" ( "+ interfaze.eClass().getName()+ " ) ";
+						String COMPONENT_PREFIX = NLS.bind(Messages.ComponentPrefix_1, currentComponent.getName(), currentComponent.eClass().getName());
+						String INTARFACE_PREFIX = NLS.bind(Messages.InterfacePrefix_0 interfaze.getName(), interfaze.eClass().getName());
 						statuses.add(createFailureStatus(context, new Object[] { INTARFACE_PREFIX, COMPONENT_PREFIX }));
 						break;
 						

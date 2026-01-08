@@ -26,6 +26,8 @@ public class Messages extends NLS {
   public static String MDCHKComponentInterfaceFunctionPortExchangeItemAllocationConsistency_4;
   public static String FunctionPrefix_0;
   public static String ComponentPrefix_0;
+  public static String InterfacePrefix_0;
+  public static String ComponentPrefix_1;
   static {
     // initialize resource bundle
     NLS.initializeMessages(BUNDLE_NAME, Messages.class);
