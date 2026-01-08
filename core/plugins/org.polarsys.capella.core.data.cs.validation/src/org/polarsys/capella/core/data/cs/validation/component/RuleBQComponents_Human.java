@@ -42,8 +42,8 @@ public abstract class RuleBQComponents_Human extends AbstractValidationRule {
           boolean res = query.getCurrentElements(component, false).stream()
               .anyMatch(x -> component.isHuman() != ((Component) x).isHuman());
           if (res) {
-            String componentType = component.isHuman() ? "Human" : "non Human";
-            String realizedComponentsType = component.isHuman() ? "non Human" : "Human";
+            String componentType = component.isHuman() ? Messages.getString("RuleBQComponents_Human.0") : Messages.getString("RuleBQComponents_Human.1"); //$NON-NLS-1$ //$NON-NLS-2$
+            String realizedComponentsType = component.isHuman() ? Messages.getString("RuleBQComponents_Human.2") : Messages.getString("RuleBQComponents_Human.3"); //$NON-NLS-1$ //$NON-NLS-2$
             return ctx.createFailureStatus(
                 new Object[] { CapellaElementExt.getValidationRuleMessagePrefix(component), componentType,
                     realizedComponentsType });
