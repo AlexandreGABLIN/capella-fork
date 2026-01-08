@@ -20,7 +20,7 @@ import java.util.Set;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.validation.IValidationContext;
-
+import org.eclipse.osgi.util.NLS;
 import org.polarsys.capella.core.data.cs.Component;
 import org.polarsys.capella.core.data.cs.Interface;
 import org.polarsys.capella.core.data.fa.FunctionPort;
@@ -65,9 +65,9 @@ public class MDCHKFunctionPortExchangeItemAllocationConsistency extends Abstract
 				
 				  boolean isOk = !functionPortExchangeItems.isEmpty() && exchangeItems.isEmpty() ? false : exchangeItems.containsAll(functionPortExchangeItems);
 				if (!isOk && !components.isEmpty()) {
-					String FUNCTION_PREFIXE = "\"" + functionPort.getName()  +"\" ( "+ functionPort.eClass().getName()+ " ) "; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+					String FUNCTION_PREFIXE = NLS.bind(Messages.FunctionPrefix_0, functionPort.getName(), functionPort.eClass().getName());
  				    Component component = (Component)components.toArray()[0];
-					String COMPONENT_PREFIXE = "\"" + component.getName()  +"\" ( "+ component.eClass().getName()+ " ) "; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+					String COMPONENT_PREFIXE = NLS.bind(Messages.FunctionPrefix_0, component.getName(), component.eClass().getName());
 					
 					return createFailureStatus(context, new Object[] { FUNCTION_PREFIXE, COMPONENT_PREFIXE});
 					 
