@@ -16,6 +16,10 @@ import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
   private static final String BUNDLE_NAME = "org.polarsys.capella.core.data.fa.ui.quickfix.resolver.messages"; //$NON-NLS-1$
+  public static String DWF_DC_12_Resolver_0;
+  public static String DWF_DC_12_Resolver_1;
+  public static String DWF_DC_27_Resolver_0;
+  public static String DWF_DC_27_Resolver_1;
   public static String DWF_DC_45_Resolver_0;
   public static String DWF_DC_45_Resolver_1;
   public static String GenerateInterfacesAllocateResolver_dialogText;
