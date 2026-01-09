@@ -26,7 +26,7 @@ public class ControlNodeItemProviderDecorator extends ItemProviderAdapterDecorat
     implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider,
     IItemPropertySource {
 
-  protected static final String CONTROL_NODE_TEXT = "[Control Node]";
+  protected static final String CONTROL_NODE_TEXT = Messages.ControlNodeItemProviderDecorator_0;
 
   public ControlNodeItemProviderDecorator(AdapterFactory adapterFactory) {
     super(adapterFactory);

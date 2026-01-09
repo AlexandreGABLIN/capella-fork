@@ -23,7 +23,7 @@ import org.polarsys.capella.core.data.gen.edit.decorators.ItemProviderAdapterDec
 public class SequenceLinkProviderDecorator extends ItemProviderAdapterDecorator implements IEditingDomainItemProvider,
     IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
-  protected static final String SEQUENCE_LINK_TEXT = "[Sequence Link]";
+  protected static final String SEQUENCE_LINK_TEXT = Messages.SequenceLinkProviderDecorator_0;
 
   public SequenceLinkProviderDecorator(AdapterFactory adapterFactory) {
     super(adapterFactory);
