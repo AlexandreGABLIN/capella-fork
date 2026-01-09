@@ -57,25 +57,25 @@ public class FunctionalExchange_Delegation extends AbstractValidationRule {
   private String getMessageNameFor(FunctionalExchange fe) {
     AbstractFunction srcFunc = FunctionalExchangeExt.getSourceFunction(fe);
     if (srcFunc instanceof OperationalActivity) {
-      return "Interaction";
+      return Messages.FunctionalExchange_Delegation_0;
     }
     return EObjectLabelProviderHelper.getMetaclassLabel(fe, false);
   }
 
   private String getSourceTargetMessage(FunctionalExchange fe) {
-    String msg = "";
+    String msg = ""; //$NON-NLS-1$
     AbstractFunction srcFunc = FunctionalExchangeExt.getSourceFunction(fe);
     AbstractFunction tarFunc = FunctionalExchangeExt.getTargetFunction(fe);
 
     if (srcFunc.getOwnedFunctions().size() > 0 && tarFunc.getOwnedFunctions().size() > 0) {
-      msg = ("Both source and target of \"" + EObjectLabelProviderHelper.getText(fe) + "\" (" + getMessageNameFor(fe)
-          + ") are not delegated to leaf " + getMessageNameFor(srcFunc));
+      msg = (Messages.FunctionalExchange_Delegation_2 + EObjectLabelProviderHelper.getText(fe) + Messages.FunctionalExchange_Delegation_3 + getMessageNameFor(fe)
+          + Messages.FunctionalExchange_Delegation_4 + getMessageNameFor(srcFunc));
     } else if (srcFunc.getOwnedFunctions().size() > 0) {
-      msg = ("The source of \"" + EObjectLabelProviderHelper.getText(fe) + "\" (" + getMessageNameFor(fe)
-          + ") is not delegated to a leaf " + getMessageNameFor(srcFunc));
+      msg = (Messages.FunctionalExchange_Delegation_5 + EObjectLabelProviderHelper.getText(fe) + Messages.FunctionalExchange_Delegation_6 + getMessageNameFor(fe)
+          + Messages.FunctionalExchange_Delegation_7 + getMessageNameFor(srcFunc));
     } else {
-      msg = ("The target of \"" + EObjectLabelProviderHelper.getText(fe) + "\" (" + getMessageNameFor(fe)
-          + ") is not delegated to a leaf " + getMessageNameFor(srcFunc));
+      msg = (Messages.FunctionalExchange_Delegation_8 + EObjectLabelProviderHelper.getText(fe) + Messages.FunctionalExchange_Delegation_9 + getMessageNameFor(fe)
+          + Messages.FunctionalExchange_Delegation_10 + getMessageNameFor(srcFunc));
     }
     return msg;
   }

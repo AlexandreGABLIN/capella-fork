@@ -20,6 +20,18 @@ import org.eclipse.osgi.util.NLS;
 public class Messages extends NLS {
   private static final String BUNDLE_NAME = "org.polarsys.capella.core.data.fa.validation.functionalExchange.messages"; //$NON-NLS-1$
   public static String exchangeItemsOnFunctionPorts_allocated;
+  public static String FunctionalExchange_Delegation_0;
+  public static String FunctionalExchange_Delegation_10;
+  public static String FunctionalExchange_Delegation_2;
+  public static String FunctionalExchange_Delegation_3;
+  public static String FunctionalExchange_Delegation_4;
+  public static String FunctionalExchange_Delegation_5;
+  public static String FunctionalExchange_Delegation_6;
+  public static String FunctionalExchange_Delegation_7;
+  public static String FunctionalExchange_Delegation_8;
+  public static String FunctionalExchange_Delegation_9;
+  public static String FunctionalExchange_loopsOnSameFunction_0;
+  public static String FunctionalExchange_loopsOnSameFunction_1;
   static {
     // initialize resource bundle
     NLS.initializeMessages(BUNDLE_NAME, Messages.class);
