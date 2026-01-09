@@ -73,9 +73,9 @@ public class CheckExchangeItemElementDirection extends AbstractValidationRule {
       ExchangeMechanism exchangeMechanism) {
     ParameterDirection direction = exchangeItemElement.getDirection();
     if (!direction.equals(ParameterDirection.UNSET)) {
-      String EIE_PARAMETER = "\"" + exchangeItemElement.getName() + "\" ( " + exchangeItemElement.eClass().getName() + " ) ";
-      String EI_PARAMETER = "\"" + exchangeItemParent.getName() + "\" ( " + exchangeItemParent.eClass().getName() + " ) ";
-      IStatus status = ctx.createFailureStatus(new Object[] { EIE_PARAMETER, EI_PARAMETER, exchangeMechanism.getName(), " shall not " });
+      String EIE_PARAMETER = "\"" + exchangeItemElement.getName() + "\" ( " + exchangeItemElement.eClass().getName() + " ) "; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+      String EI_PARAMETER = "\"" + exchangeItemParent.getName() + "\" ( " + exchangeItemParent.eClass().getName() + " ) "; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+      IStatus status = ctx.createFailureStatus(new Object[] { EIE_PARAMETER, EI_PARAMETER, exchangeMechanism.getName(), Messages.CheckExchangeItemElementDirection_0 });
       statuses.add(status);
 
     }
@@ -92,9 +92,9 @@ public class CheckExchangeItemElementDirection extends AbstractValidationRule {
       ExchangeMechanism exchangeMechanism) {
     ParameterDirection direction = exchangeItemElement.getDirection();
     if ((direction == null) || direction.equals(ParameterDirection.UNSET)) {
-      String EIE_PARAMETER = "\"" + exchangeItemElement.getName() + "\" ( " + exchangeItemElement.eClass().getName() + " ) ";
-      String EI_PARAMETER = "\"" + exchangeItemParent.getName() + "\" ( " + exchangeItemParent.eClass().getName() + " ) ";
-      IStatus status = ctx.createFailureStatus(new Object[] { EIE_PARAMETER, EI_PARAMETER, exchangeMechanism.getName(), " shall " });
+      String EIE_PARAMETER = "\"" + exchangeItemElement.getName() + "\" ( " + exchangeItemElement.eClass().getName() + " ) "; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+      String EI_PARAMETER = "\"" + exchangeItemParent.getName() + "\" ( " + exchangeItemParent.eClass().getName() + " ) "; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+      IStatus status = ctx.createFailureStatus(new Object[] { EIE_PARAMETER, EI_PARAMETER, exchangeMechanism.getName(), Messages.CheckExchangeItemElementDirection_1 });
       statuses.add(status);
     }
 
