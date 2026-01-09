@@ -84,8 +84,8 @@ public class CsActionBarContributor
 	private final class SchemeLoadResourceAction extends Action {
 
 		public SchemeLoadResourceAction() {
-			super("Load Reusable Resource...");
-			URI uri = URI.createURI("platform:/plugin/org.polarsys.kitalpha.resourcereuse.emfscheme.ui/icons/searchView.gif");
+			super(org.polarsys.capella.core.data.cs.presentation.Messages.CsActionBarContributor_0);
+			URI uri = URI.createURI("platform:/plugin/org.polarsys.kitalpha.resourcereuse.emfscheme.ui/icons/searchView.gif"); //$NON-NLS-1$
 			setImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(uri));
 		}
 		
@@ -221,7 +221,7 @@ public class CsActionBarContributor
         );        
         setMultipleSelection(true);
         setMessage(EcoreEditorPlugin.INSTANCE.getString("_UI_SelectRegisteredPackageURI")); //$NON-NLS-1$
-        setFilter("*");
+        setFilter("*"); //$NON-NLS-1$
         Map<String, URI> ePackageNsURItoGenModelLocationMap = EcorePlugin.getEPackageNsURIToGenModelLocationMap();
         Object [] result = ePackageNsURItoGenModelLocationMap.keySet().toArray(new Object[ePackageNsURItoGenModelLocationMap.size()]);
         Arrays.sort(result);
