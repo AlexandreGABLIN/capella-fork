@@ -30,15 +30,15 @@ public class DataValueContainingFeatureCheck extends AbstractValidationRule {
       EnumerationLiteral enumLiteral = (EnumerationLiteral) target;
       Enumeration enumeration = (Enumeration) target.eContainer();
       if (enumeration.getOwnedDataValues().contains(enumLiteral)) {
-        return ctx.createFailureStatus(enumLiteral.getName(), "EnumerationLiteral", enumeration.getName(),
-            "Enumeration");
+        return ctx.createFailureStatus(enumLiteral.getName(), "EnumerationLiteral", enumeration.getName(), //$NON-NLS-1$
+            Messages.DataValueContainingFeatureCheck_0);
       }
     } else if (target instanceof LiteralBooleanValue && target.eContainer() instanceof BooleanType) {
       LiteralBooleanValue literalBooleanValue = (LiteralBooleanValue) target;
       BooleanType booleanType = (BooleanType) target.eContainer();
       if (booleanType.getOwnedDataValues().contains(literalBooleanValue)) {
-        return ctx.createFailureStatus(literalBooleanValue.getName(), "LiteralBooleanValue", booleanType.getName(),
-            "BooleanType");
+        return ctx.createFailureStatus(literalBooleanValue.getName(), "LiteralBooleanValue", booleanType.getName(), //$NON-NLS-1$
+            "BooleanType"); //$NON-NLS-1$
       }
     }
     // Return success
