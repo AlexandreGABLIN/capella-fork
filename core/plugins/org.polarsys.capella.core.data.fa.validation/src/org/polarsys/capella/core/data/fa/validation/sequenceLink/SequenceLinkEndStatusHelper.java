@@ -21,11 +21,11 @@ public class SequenceLinkEndStatusHelper {
 
   // form the objects to be binded in the message that will be displayed
   public static Object[] getStatusInfo(SequenceLinkEnd seqLinkEnd) {
-    String nodeName = "";
-    String nodeClassName = "ControlNode";
+    String nodeName = ""; //$NON-NLS-1$
+    String nodeClassName = "ControlNode"; //$NON-NLS-1$
     if (seqLinkEnd instanceof FunctionalChainInvolvementFunction) {
       nodeName = ((AbstractFunction) ((FunctionalChainInvolvementFunction) seqLinkEnd).getInvolved()).getName();
-      nodeClassName = "FunctionalChainInvolvementFunction";
+      nodeClassName = "FunctionalChainInvolvementFunction"; //$NON-NLS-1$
     }
     return new Object[] { nodeName, nodeClassName };
   }

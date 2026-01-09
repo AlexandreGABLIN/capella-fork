@@ -21,7 +21,7 @@ import org.polarsys.capella.core.data.fa.FunctionalChainInvolvementLink;
  * DWF_DF_20 - SequenceLink between the referenced Involvement Functions/OperationalActivities is in opposite direction to Involvement Links referencing them
  */
 public class SequenceLinkOppositeDirectionToFE extends SequenceLinkWithInconsistentAssociatedLinks {
-  public static final String SequenceLink_Opposite_Direction = "SequenceLink between {0}({1}) and {2}({3}) is in opposite direction to Involvement Links referencing them";
+  public static final String SequenceLink_Opposite_Direction = Messages.SequenceLinkOppositeDirectionToFE_0;
 
   @Override
   protected boolean isValid(FunctionalChainInvolvementLink link,

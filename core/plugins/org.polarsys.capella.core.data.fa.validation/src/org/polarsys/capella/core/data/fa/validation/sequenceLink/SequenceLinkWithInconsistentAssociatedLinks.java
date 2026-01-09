@@ -33,7 +33,7 @@ import org.polarsys.capella.core.validation.rule.AbstractValidationRule;
  * DWF_DF_19 - SequenceLink with inconsistent associated FunctionalChainInvolvementLinks
  */
 public class SequenceLinkWithInconsistentAssociatedLinks extends AbstractValidationRule {
-  public static final String SequenceLink_Inconsistent_Associated_FCIL = "(SequenceLink) between {0}({1}) and {2}({3}) has inconsistent associated {4}(FunctionalChainInvolvementLink).";
+  public static final String SequenceLink_Inconsistent_Associated_FCIL = Messages.SequenceLinkWithInconsistentAssociatedLinks_0;
 
   @Override
   public IStatus validate(IValidationContext ctx) {
