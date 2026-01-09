@@ -16,6 +16,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.validation.EMFEventType;
 import org.eclipse.emf.validation.IValidationContext;
+import org.eclipse.osgi.util.NLS;
 import org.polarsys.capella.common.helpers.EObjectLabelProviderHelper;
 import org.polarsys.capella.core.data.fa.AbstractFunction;
 import org.polarsys.capella.core.data.fa.FunctionalExchange;
@@ -68,14 +69,11 @@ public class FunctionalExchange_Delegation extends AbstractValidationRule {
     AbstractFunction tarFunc = FunctionalExchangeExt.getTargetFunction(fe);
 
     if (srcFunc.getOwnedFunctions().size() > 0 && tarFunc.getOwnedFunctions().size() > 0) {
-      msg = (Messages.FunctionalExchange_Delegation_2 + EObjectLabelProviderHelper.getText(fe) + Messages.FunctionalExchange_Delegation_3 + getMessageNameFor(fe)
-          + Messages.FunctionalExchange_Delegation_4 + getMessageNameFor(srcFunc));
+      msg = NLS.bind(Messages.FunctionalExchange_Delegation_2, EObjectLabelProviderHelper.getText(fe), getMessageNameFor(fe), getMessageNameFor(srcFunc));
     } else if (srcFunc.getOwnedFunctions().size() > 0) {
-      msg = (Messages.FunctionalExchange_Delegation_5 + EObjectLabelProviderHelper.getText(fe) + Messages.FunctionalExchange_Delegation_6 + getMessageNameFor(fe)
-          + Messages.FunctionalExchange_Delegation_7 + getMessageNameFor(srcFunc));
+      msg = NLS.bind(Messages.FunctionalExchange_Delegation_5, EObjectLabelProviderHelper.getText(fe), getMessageNameFor(fe), getMessageNameFor(srcFunc));
     } else {
-      msg = (Messages.FunctionalExchange_Delegation_8 + EObjectLabelProviderHelper.getText(fe) + Messages.FunctionalExchange_Delegation_9 + getMessageNameFor(fe)
-          + Messages.FunctionalExchange_Delegation_10 + getMessageNameFor(srcFunc));
+      msg = NLS.bind(Messages.FunctionalExchange_Delegation_8, EObjectLabelProviderHelper.getText(fe), getMessageNameFor(fe), getMessageNameFor(srcFunc));
     }
     return msg;
   }
