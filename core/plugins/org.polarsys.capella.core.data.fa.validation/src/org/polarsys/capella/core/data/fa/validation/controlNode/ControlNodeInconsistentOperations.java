@@ -26,16 +26,16 @@ import org.polarsys.capella.core.validation.rule.AbstractValidationRule;
  * DWF_DF_21 - Control Nodes inconsistent operations
  */
 public class ControlNodeInconsistentOperations extends AbstractValidationRule {
-  public static final String ControlNode_Inconsistency_No_InOut_Sequence_Links = "has no incoming and outgoing Sequence Links";
-  public static final String ControlNode_Inconsistency_No_In_Sequence_Links = "has no incoming Sequence Links";
-  public static final String ControlNode_Inconsistency_No_Out_Sequence_Links = "has no outgoing Sequence Links";
-  public static final String ControlNode_Inconsistency_Minimum_InOut_Sequence_Links = "has only one incoming and one outgoing Sequence Link";
+  public static final String ControlNode_Inconsistency_No_InOut_Sequence_Links = Messages.ControlNodeInconsistentOperations_0;
+  public static final String ControlNode_Inconsistency_No_In_Sequence_Links = Messages.ControlNodeInconsistentOperations_1;
+  public static final String ControlNode_Inconsistency_No_Out_Sequence_Links = Messages.ControlNodeInconsistentOperations_2;
+  public static final String ControlNode_Inconsistency_Minimum_InOut_Sequence_Links = Messages.ControlNodeInconsistentOperations_3;
 
   @Override
   public IStatus validate(IValidationContext ctx) {
 
     if ((ctx.getEventType() == EMFEventType.NULL) && (ctx.getTarget() instanceof ControlNode)) {
-      String className = "ControlNode";
+      String className = Messages.ControlNodeInconsistentOperations_4;
       ControlNode controlNode = (ControlNode) ctx.getTarget();
 
       // control node without in or out links

@@ -75,10 +75,10 @@ public class MDCHK_ComponentPort_Orientation extends AbstractModelConstraint {
 
     switch (result) {
       case 1:
-    	String sourceCompPortName = sourceCompPort != null ? sourceCompPort.getName() : "Unknown";
+    	String sourceCompPortName = sourceCompPort != null ? sourceCompPort.getName() : Messages.MDCHK_ComponentPort_Orientation_0;
         return ctx.createFailureStatus("Orientation of source component port '" + sourceCompPortName + "' cannot be 'IN'"); //$NON-NLS-1$ //$NON-NLS-2$
       case 2:
-    	  String targetCompPortName = targetCompPort != null ? targetCompPort.getName() : "Unknown";
+    	  String targetCompPortName = targetCompPort != null ? targetCompPort.getName() : Messages.MDCHK_ComponentPort_Orientation_1;
         return ctx.createFailureStatus("Orientation of target component port '" + targetCompPortName + "' cannot be 'OUT'"); //$NON-NLS-1$ //$NON-NLS-2$
       case 3:
         return ctx.createFailureStatus("ComponentExchange '" + exchange.getName() + "' has inconsistent component port orientations"); //$NON-NLS-1$ //$NON-NLS-2$
