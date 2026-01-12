@@ -230,7 +230,7 @@ public class MoveHelper implements IMoveHelper {
 
         if (!isOK) {
           // We should explain why !
-          return new Status(IStatus.ERROR, "model.helpers", "Semantic rules failed.");
+          return new Status(IStatus.ERROR, "model.helpers", "Semantic rules failed."); //$NON-NLS-1$
         }
       }
     }
