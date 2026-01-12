@@ -466,16 +466,16 @@ public class RepresentationHelper {
     String result = ICommonConstants.EMPTY_STRING;
 
     if (!new DRepresentationDescriptorQuery(element).isRepresentationValid()) {
-      return "(Invalid)";
+      return Messages.RepresentationHelper_1;
     } else if (!element.isLoadedRepresentation()) {
-      result = "(Not Loaded)";
+      result = Messages.RepresentationHelper_2;
     } else {
       DRepresentation representation = element.getRepresentation();
       if (representation instanceof DDiagram) {
         if (((DDiagram) representation).isSynchronized()) {
-          result = "(Synchronized)";
+          result = Messages.RepresentationHelper_3;
         } else {
-          result = "(Unsynchronized)";
+          result = Messages.RepresentationHelper_4;
         }
       }
     }
