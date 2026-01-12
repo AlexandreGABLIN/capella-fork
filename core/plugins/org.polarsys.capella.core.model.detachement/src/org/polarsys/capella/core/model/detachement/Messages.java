@@ -25,6 +25,7 @@ public class Messages {
   public static String CAPELLA_LIBRARIES_DESC;
   public static String SELECT_ALL_LABEL;
   public static String DESELECT_ALL_LABEL;
+  public static String CapellaModelCommand_0;
   
   static {
     NLS.initializeMessages(BUNDLE_NAME, Messages.class);
