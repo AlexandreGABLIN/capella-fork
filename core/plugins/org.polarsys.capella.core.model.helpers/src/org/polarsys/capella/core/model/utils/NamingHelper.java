@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.polarsys.capella.common.data.modellingcore.AbstractNamedElement;
@@ -74,7 +75,7 @@ public class NamingHelper {
       name = EObjectLabelProviderHelper.getText(modelElement);
     }
     if (title.length() > 0 && name != null) {
-      title = title + " ";
+      title = NLS.bind(Messages.NamingHelper_0, title); //$NON-NLS-1$
     }
     title = title + (name == null ? ICommonConstants.EMPTY_STRING : name);
     return title;
@@ -92,11 +93,11 @@ public class NamingHelper {
       builder.append(metaclassLabel);
     }
     if (modelElement instanceof Component && ComponentExt.isActor((Component) modelElement)) {
-      builder.append("[Actor]");
+      builder.append(Messages.NamingHelper_1); //$NON-NLS-1$
     }
     if (modelElement instanceof PhysicalComponent) {
       String nature = ((PhysicalComponent) modelElement).getNature().getName();
-      builder.append("[" + capitalize(nature) + "]");
+      builder.append(NLS.bind(Messages.NamingHelper_2, capitalize(nature))); //$NON-NLS-1$ //$NON-NLS-2$
     }
 
     return builder.toString();

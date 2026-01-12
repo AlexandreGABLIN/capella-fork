@@ -23,6 +23,12 @@ public class Messages {
 
   private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
 
+  public static final String NamingHelper_0;
+
+  public static final String NamingHelper_1;
+
+  public static final String NamingHelper_2;
+
   private Messages() {
     //
   }
