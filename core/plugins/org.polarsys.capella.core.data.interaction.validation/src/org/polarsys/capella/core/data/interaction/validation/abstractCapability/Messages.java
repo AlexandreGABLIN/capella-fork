@@ -16,7 +16,7 @@ package org.polarsys.capella.core.data.interaction.validation.abstractCapability
 import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
-  private static final String BUNDLE_NAME = "org.polarsys.capella.core.data.interaction.validation.abstractCapability.messages";
+  private static final String BUNDLE_NAME = "org.polarsys.capella.core.data.interaction.validation.abstractCapability.messages"; //$NON-NLS-1$
   public static String DWF_CA_07_Validator_Message;
   public static String DWF_CA_08_Validator_Message;
   public static String DWF_CA_09_Validator_Message;
