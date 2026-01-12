@@ -4,6 +4,9 @@ import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
+	public static String DeploymentParentPCChecks_0;
+	public static String DeploymentParentPCChecks_1;
+	public static String DeploymentParentPCChecks_2;
 	public static String PhysicalActor_RealizedLogicalActor_0;
 	public static String PhysicalComponent_RealizedLogicalComponents_0;
 	static {
