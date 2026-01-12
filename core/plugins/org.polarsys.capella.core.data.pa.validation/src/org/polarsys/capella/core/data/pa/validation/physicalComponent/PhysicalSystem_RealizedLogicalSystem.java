@@ -41,7 +41,7 @@ public class PhysicalSystem_RealizedLogicalSystem extends AbstractValidationRule
         PhysicalComponent component = (PhysicalComponent) eObj;
         if (component.equals(BlockArchitectureExt.getRootBlockArchitecture(component).getSystem())) {
           if (component.getRealizedLogicalComponents().isEmpty()) {
-            String previousRootCompoenentname = "";
+            String previousRootCompoenentname = ""; //$NON-NLS-1$
             BlockArchitecture previousArchitectures = BlockArchitectureExt
                 .getPreviousBlockArchitecture(BlockArchitectureExt.getRootBlockArchitecture(component));
             Component previousRootComponent = previousArchitectures.getSystem();
