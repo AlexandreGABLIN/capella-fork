@@ -26,6 +26,9 @@ public class Messages extends NLS {
 	public static String DWF_DS_19_Resolutions_3;
 	public static String DWF_DS_19_Resolutions_4;
 	public static String DWF_DS_19_Resolutions_5;
+	public static String DWF_DS_20_Resolutions_0;
+	public static String DWF_DS_20_Resolutions_1;
+	public static String DWF_DS_20_Resolutions_2;
 	public static String DWF_DS_21_Resolutions_0;
 	public static String DWF_DS_21_Resolutions_1;
 	public static String DWF_DS_21_Resolutions_2;
