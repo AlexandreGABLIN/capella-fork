@@ -29,6 +29,9 @@ public class Messages extends NLS {
 	public static String DWF_DS_21_Resolutions_0;
 	public static String DWF_DS_21_Resolutions_1;
 	public static String DWF_DS_21_Resolutions_2;
+	public static String DWF_DS_22_Resolutions_0;
+	public static String DWF_DS_22_Resolutions_1;
+	public static String DWF_DS_22_Resolutions_2;
 	public static String Helper_Resolutions_1;
 	static {
 		// initialize resource bundle
