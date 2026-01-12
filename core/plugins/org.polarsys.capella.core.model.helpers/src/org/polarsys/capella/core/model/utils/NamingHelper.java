@@ -112,7 +112,7 @@ public class NamingHelper {
   public static String getTextForResource(IResource resource) {
     IContainer parent = resource.getParent();
     if (parent != null && parent.getType() != IResource.ROOT) {
-      return resource.getName() + " - " + parent.getFullPath();
+      return resource.getName() + " - " + parent.getFullPath(); //$NON-NLS-1$
 
     }
     return resource.getName();
@@ -183,7 +183,7 @@ public class NamingHelper {
     while (iterator.hasNext()) {
       builder.append(iterator.next().getName());
       if (iterator.hasNext()) {
-        builder.append(", ");
+        builder.append(", "); //$NON-NLS-1$
       }
     }
     return builder.toString();
