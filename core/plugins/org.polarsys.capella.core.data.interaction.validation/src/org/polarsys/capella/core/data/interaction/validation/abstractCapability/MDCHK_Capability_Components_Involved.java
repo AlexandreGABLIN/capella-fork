@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.validation.EMFEventType;
 import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.emf.validation.model.ConstraintStatus;
+import org.eclipse.osgi.util.NLS;
 import org.polarsys.capella.common.helpers.EObjectLabelProviderHelper;
 import org.polarsys.capella.core.data.cs.Component;
 import org.polarsys.capella.core.data.ctx.SystemComponent;
@@ -83,7 +84,7 @@ public class MDCHK_Capability_Components_Involved extends AbstractValidationRule
     Object[] msgArguments = new Object[] { capability.getName(),
         EObjectLabelProviderHelper.getMetaclassLabel(capability, false),
         CapellaElementExt.getValidationRuleMessagePrefix(element),
-        getFunctionalChainType(capability) + " or Scenarios" };
+        NLS.bind(Messages.MDCHK_Capability_Components_Involved_0, getFunctionalChainType(capability))};
     Collection<EObject> resultLocus = new ArrayList<EObject>();
     resultLocus.add(capability);
     resultLocus.add(element);
@@ -92,9 +93,9 @@ public class MDCHK_Capability_Components_Involved extends AbstractValidationRule
   }
 
   private String getFunctionalChainType(AbstractCapability capability) {
-    String type = "Functional Chains";
+    String type = Messages.MDCHK_Capability_Components_Involved_1;
     if (capability instanceof OperationalCapability)
-      type = "Operational Processes";
+      type = Messages.MDCHK_Capability_Components_Involved_2;
 
     return type;
   }
