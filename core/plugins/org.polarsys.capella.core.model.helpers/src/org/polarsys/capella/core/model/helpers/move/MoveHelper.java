@@ -94,8 +94,8 @@ import org.polarsys.kitalpha.emde.model.edit.provider.ExtensibleElementItemProvi
  */
 public class MoveHelper implements IMoveHelper {
 
-  static String PLUGIN_ID = "org.polarsys.capella.core.model.helpers";
-  static String EP_MOVE_HELPER_ID = "moveHelper";
+  static String PLUGIN_ID = "org.polarsys.capella.core.model.helpers"; //$NON-NLS-1$
+  static String EP_MOVE_HELPER_ID = "moveHelper"; //$NON-NLS-1$
   private List<IMoveHelper> moveHelpers;
   private static MoveHelper instance;
 
@@ -679,7 +679,7 @@ public class MoveHelper implements IMoveHelper {
       for (IConfigurationElement element : ExtensionPointHelper.getConfigurationElements(PLUGIN_ID,
           EP_MOVE_HELPER_ID)) {
         try {
-          IMoveHelper helper = (IMoveHelper) element.createExecutableExtension("class");
+          IMoveHelper helper = (IMoveHelper) element.createExecutableExtension("class"); //$NON-NLS-1$
           if (helper != null) {
             moveHelpers.add(helper);
           }
