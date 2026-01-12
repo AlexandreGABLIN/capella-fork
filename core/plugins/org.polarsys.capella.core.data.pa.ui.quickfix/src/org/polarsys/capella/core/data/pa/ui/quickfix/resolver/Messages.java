@@ -4,6 +4,7 @@ import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
+	public static String AbstractPhysicalComponentNatureChangeResolver_0;
 	public static String PhysicalComponentNatureToBehaviorResolver_0;
 	public static String PhysicalComponentNatureToNodeResolver_0;
 	public static String SwitchPhysicalComponentNature_0;
