@@ -45,13 +45,13 @@ public class LogicalSystem_RealizedSystemSystem extends AbstractValidationRule {
             BlockArchitecture previousArchitectures = BlockArchitectureExt
                 .getPreviousBlockArchitecture(BlockArchitectureExt.getRootBlockArchitecture(component));
             Component previousRootComponent = previousArchitectures.getSystem();
-            String previousRootComponentName = NLS.bind("Root {0}", CtxPackage.Literals.SYSTEM_COMPONENT.getName());
+            String previousRootComponentName = NLS.bind("Root {0}", CtxPackage.Literals.SYSTEM_COMPONENT.getName()); //$NON-NLS-1$
             if (previousRootComponent != null) {
-              previousRootComponentName = NLS.bind("Root \"{0}\"{1}", previousRootComponent.getName(),
+              previousRootComponentName = NLS.bind("Root \"{0}\"{1}", previousRootComponent.getName(), //$NON-NLS-1$
                   EObjectLabelProviderHelper.getMetaclassLabel(previousRootComponent, true));
             }
 
-            return ctx.createFailureStatus(NLS.bind("Root \"{0}\"{1}", component.getName(),
+            return ctx.createFailureStatus(NLS.bind("Root \"{0}\"{1}", component.getName(), //$NON-NLS-1$
                 EObjectLabelProviderHelper.getMetaclassLabel(component, true)), previousRootComponentName);
           }
         }
