@@ -118,9 +118,9 @@ public class ManageReferencedLibrariesHandler extends AbstractHandler {
       @Override
       public void addPages() {
         PropertyWizardPage page = new PropertyWizardPage("propertiesEditor", getContext(), getRendererContext()); //$NON-NLS-1$
-        page.setTitle(modelName + " management");
+        page.setTitle(modelName + Messages.ManageReferencedLibrariesHandler_0);
         page.setDescription(
-            "This wizard helps you to define the libraries that are referenced by the current project (first tab).\nYou can also specify among these libraries which ones must be considered in capella query scopes (second tab).");
+            Messages.ManageReferencedLibrariesHandler_1);
         addPage(page);
       }
     };
