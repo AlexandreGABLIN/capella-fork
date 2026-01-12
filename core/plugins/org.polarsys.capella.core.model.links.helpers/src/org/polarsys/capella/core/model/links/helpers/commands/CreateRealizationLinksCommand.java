@@ -25,6 +25,6 @@ public class CreateRealizationLinksCommand extends CreateTraceCommand {
    * 
    */
   public CreateRealizationLinksCommand(EClass linkType, EReference linkRefInSource) {
-    super("Realization", LinkStyle.LINE_DASHED, linkType, linkRefInSource);
+    super("Realization", LinkStyle.LINE_DASHED, linkType, linkRefInSource); //$NON-NLS-1$
   }
 }

@@ -34,7 +34,7 @@ public class CreateAssociationCommand extends AbstractCreateLinksCommand {
   protected Association _createdAssociation;
 
   public CreateAssociationCommand() {
-    super("Association", LinkStyle.LINE_SOLID_WITH_FILLED_ARROW);
+    super("Association", LinkStyle.LINE_SOLID_WITH_FILLED_ARROW); //$NON-NLS-1$
   }
 
   /**
@@ -85,10 +85,10 @@ public class CreateAssociationCommand extends AbstractCreateLinksCommand {
       sourceProperty.setAggregationKind(AggregationKind.ASSOCIATION);
       sourceProperty.setName(InformationServices.getService().convertToUpperFirst(null, target.getName()));
       LiteralNumericValue sourceMinCard = DatavalueFactory.eINSTANCE.createLiteralNumericValue();
-      sourceMinCard.setValue("1");
+      sourceMinCard.setValue("1"); //$NON-NLS-1$
       sourceProperty.setOwnedMinCard(sourceMinCard);
       LiteralNumericValue sourceMaxCard = DatavalueFactory.eINSTANCE.createLiteralNumericValue();
-      sourceMaxCard.setValue("1");
+      sourceMaxCard.setValue("1"); //$NON-NLS-1$
       sourceProperty.setOwnedMaxCard(sourceMaxCard);
 
       Property targetProperty = InformationFactory.eINSTANCE.createProperty();
@@ -96,10 +96,10 @@ public class CreateAssociationCommand extends AbstractCreateLinksCommand {
       targetProperty.setAggregationKind(AggregationKind.ASSOCIATION);
       targetProperty.setName(InformationServices.getService().convertToUpperFirst(null, source.getName()));
       LiteralNumericValue targetMinCard = DatavalueFactory.eINSTANCE.createLiteralNumericValue();
-      targetMinCard.setValue("1");
+      targetMinCard.setValue("1"); //$NON-NLS-1$
       targetProperty.setOwnedMinCard(targetMinCard);
       LiteralNumericValue targetMaxCard = DatavalueFactory.eINSTANCE.createLiteralNumericValue();
-      targetMaxCard.setValue("1");
+      targetMaxCard.setValue("1"); //$NON-NLS-1$
       targetProperty.setOwnedMaxCard(targetMaxCard);
 
       _createdAssociation.getOwnedMembers().add(sourceProperty);

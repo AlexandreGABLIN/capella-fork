@@ -29,7 +29,7 @@ public class CreateExchangeItemAllocationCommand extends AbstractCreateLinksComm
   protected ExchangeItemAllocation _createdExchangeItemAllocation;
 
   public CreateExchangeItemAllocationCommand() {
-    super("Exchange item allocation", LinkStyle.LINE_SOLID);
+    super("Exchange item allocation", LinkStyle.LINE_SOLID); //$NON-NLS-1$
   }
 
   /**

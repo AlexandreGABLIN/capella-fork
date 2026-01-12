@@ -25,6 +25,6 @@ public class CreateComponentExchangeAllocation extends CreateTraceCommand {
  * 
  */
   public CreateComponentExchangeAllocation(EClass linkType, EReference linkRefInSource) {
-    super("Component Exchange Allocation", LinkStyle.LINE_DASHED, linkType, linkRefInSource);
+    super("Component Exchange Allocation", LinkStyle.LINE_DASHED, linkType, linkRefInSource); //$NON-NLS-1$
   }
 }
