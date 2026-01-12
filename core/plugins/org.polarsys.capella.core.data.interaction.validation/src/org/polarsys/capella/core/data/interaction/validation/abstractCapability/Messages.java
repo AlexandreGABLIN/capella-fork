@@ -23,6 +23,9 @@ public class Messages extends NLS {
   public static String MDCHK_Capability_Components_Involved_0;
   public static String MDCHK_Capability_Components_Involved_1;
   public static String MDCHK_Capability_Components_Involved_2;
+  public static String MDCHK_Capability_Components_NotInvolved_0;
+  public static String MDCHK_Capability_Components_NotInvolved_1;
+  public static String MDCHK_Capability_Components_NotInvolved_2;
   static {
     // initialize resource bundle
     NLS.initializeMessages(BUNDLE_NAME, Messages.class);
