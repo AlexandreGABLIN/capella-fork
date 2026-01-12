@@ -13,7 +13,7 @@
 package org.polarsys.capella.core.model.links.helpers.commands;
 
 import org.eclipse.emf.ecore.EObject;
-
+import org.eclipse.osgi.util.NLS;
 import org.polarsys.capella.core.data.information.AggregationKind;
 import org.polarsys.capella.core.data.information.Association;
 import org.polarsys.capella.core.data.information.AssociationPkg;
@@ -72,7 +72,7 @@ public class CreateAssociationCommand extends AbstractCreateLinksCommand {
       _createdAssociation = InformationFactory.eINSTANCE.createAssociation();
       // Generate association name.
       // TODO see if there is a common name generator for MA.
-      String name = ((AssociationPkg) container).getName() + "Association" + (((AssociationPkg) container).getOwnedAssociations().size() + 1);
+      String name = NLS.bind(Messages.CreateAssociationCommand_1, ((AssociationPkg) container).getName(), (((AssociationPkg) container).getOwnedAssociations().size() + 1));
       _createdAssociation.setName(name);
 
       Property sourceProperty;
