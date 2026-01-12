@@ -52,19 +52,19 @@ public class DeploymentChildPCChecks extends AbstractValidationRule {
               PhysicalComponentNature.BEHAVIOR);
           if (deployingBehaviorPC != null) {
             return ctx.createFailureStatus(CapellaElementExt.getValidationRuleMessagePrefix(currentElement)
-                + "can't be deployed on " + CapellaElementExt.getValidationRuleMessagePrefix(deployingBehaviorPC));
+                + Messages.DeploymentChildPCChecks_0 + CapellaElementExt.getValidationRuleMessagePrefix(deployingBehaviorPC));
           }
           PhysicalComponent behaviorPC = getContainingComponent(currentElement, PhysicalComponentNature.BEHAVIOR);
           if (behaviorPC != null) {
             return ctx.createFailureStatus(CapellaElementExt.getValidationRuleMessagePrefix(currentElement)
-                + "can't be contained in " + CapellaElementExt.getValidationRuleMessagePrefix(behaviorPC));
+                + Messages.DeploymentChildPCChecks_1 + CapellaElementExt.getValidationRuleMessagePrefix(behaviorPC));
           }
         } else if (PhysicalComponentExt.isBehaviour(currentElement)) {
           // 2. check that BEHAVIOR PC/PA can't be contained on NODE PC/PA
           PhysicalComponent nodePC = getContainingComponent(currentElement, PhysicalComponentNature.NODE);
           if (nodePC != null) {
             return ctx.createFailureStatus(CapellaElementExt.getValidationRuleMessagePrefix(currentElement)
-                + "can't be contained in " + CapellaElementExt.getValidationRuleMessagePrefix(nodePC));
+                + Messages.DeploymentChildPCChecks_2 + CapellaElementExt.getValidationRuleMessagePrefix(nodePC));
           }
         }
       }
