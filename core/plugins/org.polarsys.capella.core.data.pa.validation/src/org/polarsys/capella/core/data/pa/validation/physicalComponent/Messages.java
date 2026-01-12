@@ -9,6 +9,7 @@ public class Messages extends NLS {
 	public static String DeploymentParentPCChecks_2;
 	public static String PhysicalActor_RealizedLogicalActor_0;
 	public static String PhysicalComponent_RealizedLogicalComponents_0;
+	public static String PhysicalComponentContainedAndDeployed_0;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
