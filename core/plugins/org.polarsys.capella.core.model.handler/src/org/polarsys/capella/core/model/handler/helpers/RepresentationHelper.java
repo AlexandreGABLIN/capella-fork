@@ -398,7 +398,7 @@ public class RepresentationHelper {
       try {
         descriptorFragment = representationDescriptor.getRepPath().getResourceURI().fragment();
       } catch (NullPointerException e) {
-        descriptorFragment = "";
+        descriptorFragment = ""; //$NON-NLS-1$
       }
 
       String descriptorUid = representationDescriptor.getUid();
@@ -483,14 +483,14 @@ public class RepresentationHelper {
   }
 
   public static String getRepresentationFullPathText(DRepresentationDescriptor descriptor) {
-    String fullPathText = "";
+    String fullPathText = ""; //$NON-NLS-1$
     EObject semanticElement = descriptor.getTarget();
 
     if (semanticElement != null) {
       fullPathText += EObjectLabelProviderHelper.getFullPathText(semanticElement);
     }
 
-    fullPathText += EObjectLabelProviderHelper.FULL_PATH_SEPARATOR + descriptor.getName() + " "
+    fullPathText += EObjectLabelProviderHelper.FULL_PATH_SEPARATOR + descriptor.getName() + " " //$NON-NLS-1$
         + RepresentationHelper.getRepresentationStatusText(descriptor);
     return fullPathText;
   }
