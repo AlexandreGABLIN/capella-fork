@@ -11,6 +11,7 @@ import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.emf.validation.model.ConstraintStatus;
 import org.eclipse.emf.validation.service.ConstraintRegistry;
 import org.eclipse.emf.validation.service.IConstraintDescriptor;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.polarsys.capella.core.model.utils.NamingHelper;
@@ -50,22 +51,18 @@ public class InvalidNameHandler implements ILinkParser {
       if (!name.equals(value)) {
         if (!parsedLinks.contains(parsedLink)) {
           parsedLinks.add(parsedLink);
-          String message = "(Hyperlink) The " + (isDiagram ? "diagram" : "model") + " element named \"" + value
-              + "\" (id: " + elementId + ") found in the rich text description of "
-              + DescriptionParserHelper.getElementName(element) + " is not up to date.";
+          String message = NLS.bind(Messages.InvalidNameHandler_3, (isDiagram ? Messages.InvalidNameHandler_4 : Messages.InvalidNameHandler_5), value, elementId, DescriptionParserHelper.getElementName(element));
           message = SaxParserHelper.unescapeSpecialCharacter(message);
           result.add(ConstraintStatus.createStatus(ctx, element, ctx.getResultLocus(), IStatus.WARNING,
-              desc.getStatusCode(), "{0}", message));
+              desc.getStatusCode(), Messages.InvalidNameHandler_10, message));
         } else {
           String elementName = value;
           List<IStatus> updatedResult = result.stream().map(sts -> {
             if (sts.getMessage().contains(elementId)) {
-              String message = "(Hyperlink) The " + (isDiagram ? "diagrams" : "models") + " elements named \""
-                  + elementName + ", ...\" (id: " + elementId + ") found in the rich text description of "
-                  + DescriptionParserHelper.getElementName(element) + " are not up to date.";
+              String message = NLS.bind(Messages.InvalidNameHandler_11, (isDiagram ? Messages.InvalidNameHandler_12 : Messages.InvalidNameHandler_13), elementName, elementId, DescriptionParserHelper.getElementName(element));
               message = SaxParserHelper.unescapeSpecialCharacter(message);
               return ConstraintStatus.createStatus(ctx, element, ctx.getResultLocus(), IStatus.WARNING,
-                  desc.getStatusCode(), "{0}", message);
+                  desc.getStatusCode(), Messages.InvalidNameHandler_18, message);
             }
             return sts;
           }).collect(Collectors.toList());
