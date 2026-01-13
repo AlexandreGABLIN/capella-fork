@@ -65,7 +65,7 @@ public class ReplicableElementHandler extends org.polarsys.capella.common.re.han
         }
       }
       RecCatalog pkg = ReFactory.eINSTANCE.createRecCatalog();
-      pkg.setName("REC Catalog");
+      pkg.setName(Messages.ReplicableElementHandler_0);
       eng.getOwnedExtensions().add(pkg);
       return pkg;
     }
