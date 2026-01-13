@@ -46,8 +46,6 @@ public class Messages extends NLS {
   public static String CapellaPasteCommand_error_session;
   public static String CapellaPasteCommand_error_command;
   public static String PortRealizationPropagationCommand_0;
-  public static String PortRealizationPropagationCommand_1;
-  public static String PortRealizationPropagationCommand_2;
   public static String PropagateEIOnPorts;
   public static String PropagatePortRealizations;
   public static String ComponentExchangeThroughDelegations;

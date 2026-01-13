@@ -22,6 +22,7 @@ import java.util.List;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.osgi.util.NLS;
 import org.polarsys.capella.common.data.activity.ActivityEdge;
 import org.polarsys.capella.common.data.activity.ActivityNode;
 import org.polarsys.capella.common.data.modellingcore.ModelElement;
@@ -174,8 +175,7 @@ public class PortRealizationPropagationCommand extends AbstractFixCommand {
     realization.setSourceElement(current);
     realization.setTargetElement(previous);
     current.getOwnedPortRealizations().add(realization);
-    String message = Messages.PortRealizationPropagationCommand_0 + realization.getLabel() + Messages.PortRealizationPropagationCommand_1
-        + current.getLabel() + Messages.PortRealizationPropagationCommand_2 + previous.getLabel();
+    String message = NLS.bind(Messages.PortRealizationPropagationCommand_0, realization.getLabel(), current.getLabel(), previous.getLabel());
     EmbeddedMessage eMessage = new EmbeddedMessage(message, logger.getName(),
         Arrays.asList(realization, current, previous));
     logger.info(eMessage);
