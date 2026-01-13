@@ -114,17 +114,17 @@ public class WizardPreferencesTransfererExportPage extends org.eclipse.ui.intern
 
     // destination browse button
     destinationBrowseButton = new Button(destinationSelectionGroup, SWT.PUSH);
-    destinationBrowseButton.setText("Workspace...");
+    destinationBrowseButton.setText(Messages.WizardPreferencesTransfererExportPage_0);
     setButtonLayoutData(destinationBrowseButton);
-    destinationBrowseButton.setToolTipText("B&rowse Workspace ...");
+    destinationBrowseButton.setToolTipText(Messages.WizardPreferencesTransfererExportPage_1);
     destinationBrowseButton.addListener(SWT.Selection, this);
 
     // destination browse button
     destinationExplorerBrowseButton = new Button(destinationSelectionGroup, SWT.PUSH);
-    destinationExplorerBrowseButton.setText("File System...");
+    destinationExplorerBrowseButton.setText(Messages.WizardPreferencesTransfererExportPage_2);
     setButtonLayoutData(destinationExplorerBrowseButton);
     destinationExplorerBrowseButton.addListener(SWT.Selection, this);
-    destinationExplorerBrowseButton.setToolTipText("B&rowse File System...");
+    destinationExplorerBrowseButton.setToolTipText(Messages.WizardPreferencesTransfererExportPage_3);
     
     new Label(parent, SWT.NONE); // vertical spacer
   }
@@ -140,7 +140,7 @@ public class WizardPreferencesTransfererExportPage extends org.eclipse.ui.intern
       PreferenceTransferElement[] transfers = parents != null ? parents : new PreferenceTransferElement[0];
       List<PreferenceTransferElement> capellaTransfers = new ArrayList<PreferenceTransferElement>();
       for (PreferenceTransferElement currentPreferenceTransferElement : transfers) {
-        if (currentPreferenceTransferElement.getID().contains("capella")) {
+        if (currentPreferenceTransferElement.getID().contains("capella")) { //$NON-NLS-1$
           capellaTransfers.add(currentPreferenceTransferElement);
         }
       }
