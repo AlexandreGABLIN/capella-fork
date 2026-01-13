@@ -20,6 +20,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.osgi.util.NLS;
 import org.polarsys.capella.common.data.activity.ActivityNode;
 import org.polarsys.capella.common.data.modellingcore.AbstractTrace;
 import org.polarsys.capella.common.data.modellingcore.TraceableElement;
@@ -217,9 +218,8 @@ public class DefaultExchangesCreator implements IExchangesCreator {
     cfea.setTargetElement(functionalExchange_p);
     ce.getOwnedComponentExchangeFunctionalExchangeAllocations().add(cfea);
 
-    String message = "The Component exchange " + ce.getName()
-        + " has been succefully created between the exchange source component " + exchangeInput_p.getLabel()
-        + " and the exchange target component " + exchangeOutput_p.getLabel();
+    String message = NLS.bind(Messages.DefaultExchangesCreator_0, ce.getName(), exchangeInput_p.getLabel(), 
+    		exchangeOutput_p.getLabel());
     EmbeddedMessage eMessage = new EmbeddedMessage(message, logger.getName(),
         Arrays.asList(ce, exchangeInput_p, exchangeOutput_p));
     logger.info(eMessage);
