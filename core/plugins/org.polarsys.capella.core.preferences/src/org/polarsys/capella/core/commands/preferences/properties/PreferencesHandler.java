@@ -171,7 +171,7 @@ public class PreferencesHandler extends AbstractHandler implements IElementUpdat
 
           @Override
           public EvaluationResult evaluate(IEvaluationContext context_p) throws CoreException {
-            Object selection = context_p.getVariable("selection");
+            Object selection = context_p.getVariable("selection"); //$NON-NLS-1$
             boolean result = true;
             if ((selection != null) && (selection instanceof ISelection)) {
               IItemDescriptor commandDescriptor = PreferencesItemsRegistry.getInstance()
@@ -210,9 +210,9 @@ public class PreferencesHandler extends AbstractHandler implements IElementUpdat
   @Override
   public void updateElement(UIElement element, Map parameters) {
     if (!isEnabledCommand) {
-      element.setIcon(Activator.getImageDescriptor("preference.gif"));
-      element.setHoverIcon(Activator.getImageDescriptor("preference.gif"));
-      element.setTooltip("this element is disabled from preferences");
+      element.setIcon(Activator.getImageDescriptor("preference.gif")); //$NON-NLS-1$
+      element.setHoverIcon(Activator.getImageDescriptor("preference.gif")); //$NON-NLS-1$
+      element.setTooltip(Messages.PreferencesHandler_3);
     }
   }
 
