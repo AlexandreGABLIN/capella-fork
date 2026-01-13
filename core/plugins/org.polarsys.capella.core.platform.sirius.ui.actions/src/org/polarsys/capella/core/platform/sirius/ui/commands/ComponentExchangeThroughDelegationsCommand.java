@@ -19,6 +19,7 @@ import java.util.Collections;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.osgi.util.NLS;
 import org.polarsys.capella.common.data.modellingcore.ModelElement;
 import org.polarsys.capella.common.tools.report.EmbeddedMessage;
 import org.polarsys.capella.core.data.cs.Component;
@@ -93,9 +94,7 @@ public class ComponentExchangeThroughDelegationsCommand extends AbstractFixComma
                   (ComponentPort) sourcePort, targetPart, (ComponentPort) targetPort);
               for (EObject object : result) {
                 ComponentExchange ce = (ComponentExchange) object;
-                String message = "The Component exchange " + ce.getName()
-                    + " has been succefully created between the exchange input component " + ce.getSource().getLabel()
-                    + " and the exchange output component " + ce.getTarget().getLabel();
+                String message = NLS.bind(Messages.ComponentExchangeThroughDelegationsCommand_0, ce.getName(), ce.getSource().getLabel(), ce.getTarget().getLabel());
                 EmbeddedMessage eMessage = new EmbeddedMessage(message, logger.getName(), ce);
                 logger.info(eMessage);
               }

@@ -47,6 +47,7 @@ public class Messages extends NLS {
   public static String PropagateEIOnPorts;
   public static String PropagatePortRealizations;
   public static String ComponentExchangeThroughDelegations;
+  public static String ComponentExchangeThroughDelegationsCommand_0;
 
   static {
     // initialize resource bundle
