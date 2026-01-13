@@ -19,6 +19,7 @@ import java.util.Collections;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.osgi.util.NLS;
 import org.polarsys.capella.common.data.modellingcore.ModelElement;
 import org.polarsys.capella.common.ef.command.AbstractReadWriteCommand;
 import org.polarsys.capella.common.helpers.operations.LongRunningListenersRegistry;
@@ -84,8 +85,7 @@ public abstract class AbstractFixCommand extends AbstractReadWriteCommand {
           progressMonitor.worked(1);
         }
         if (!elementProcessed) {
-          String message = getName() + Messages.AbstractFixCommand_0
-              + (elements.isEmpty() ? "" : elements.toString()); //$NON-NLS-1$
+          String message = NLS.bind(Messages.AbstractFixCommand_0, getName(), (elements.isEmpty() ? "" : elements.toString())); //$NON-NLS-1$
           EmbeddedMessage eMessage = new EmbeddedMessage(message, logger.getName(), elements.toString());
           logger.info(eMessage);
         }
