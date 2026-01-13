@@ -73,7 +73,7 @@ public class FC2FSInitialization {
     boolean isMsgWithReply = FC2FSExt.isCreateMsgWithReply(funcChains.iterator().next());
 
     for (FunctionalChain fc : funcChains) {
-      logInfo("Looking up existing Scenarios...");
+      logInfo("Looking up existing Scenarios..."); //$NON-NLS-1$
       // Look for existing scenarios and ask the user if he want to continue when found Scenarios
       Collection<Scenario> availableInitializedScenarios = FC2FSExt.getAvailableInitializedScenarios(fc);
       if (!availableInitializedScenarios.isEmpty()) {
@@ -89,9 +89,9 @@ public class FC2FSInitialization {
 
     if (!fc2ScenarioPairs.isEmpty()) {
       // Add to the model
-      logInfo("Adding created Scenario to the model");
+      logInfo("Adding created Scenario to the model"); //$NON-NLS-1$
       FC2FSExt.addToModel(fc2ScenarioPairs);
-      logInfo("Initialization finished");
+      logInfo("Initialization finished"); //$NON-NLS-1$
     }
   }
 
@@ -99,7 +99,7 @@ public class FC2FSInitialization {
   private void doExecute(FunctionalChain fc, boolean isMsgWithReply,
       Collection<Pair<FunctionalChain, Scenario>> fc2ScenarioPairs) {
 
-    logInfo("Perform initialization from " + fc.eClass().getName() + " " + fc.getName());
+    logInfo("Perform initialization from " + fc.eClass().getName() + " " + fc.getName()); //$NON-NLS-1$ //$NON-NLS-2$
     // Functional Chain => Scenario
     Scenario scenario = toScenario(fc);
 
@@ -115,10 +115,10 @@ public class FC2FSInitialization {
       createSequenceMessages(fc, scenario);
     }
     // Reorder the InstanceRoles in the Scenario
-    logInfo("Reordering InstanceRoles...");
-    logInfo("Old order: " + NamingHelper.toString((List) scenario.getOwnedInstanceRoles()));
+    logInfo("Reordering InstanceRoles..."); //$NON-NLS-1$
+    logInfo("Old order: " + NamingHelper.toString((List) scenario.getOwnedInstanceRoles())); //$NON-NLS-1$
     reorderInstanceRoles(scenario);
-    logInfo("New order: " + NamingHelper.toString((List) scenario.getOwnedInstanceRoles()));
+    logInfo("New order: " + NamingHelper.toString((List) scenario.getOwnedInstanceRoles())); //$NON-NLS-1$
 
     // Add the pairs collection
     fc2ScenarioPairs.add(new Pair<FunctionalChain, Scenario>(fc, scenario));
@@ -133,7 +133,7 @@ public class FC2FSInitialization {
   }
 
   private void createSequenceMessagesWithReply(FunctionalChain fc, Scenario scenario) {
-    logInfo("Functional Chain with return branch is enabled");
+    logInfo("Functional Chain with return branch is enabled"); //$NON-NLS-1$
     for (FunctionalChainInvolvement fci : FunctionalChainExt.getFlatInvolvementsOf(fc,
         FaPackage.Literals.FUNCTIONAL_EXCHANGE)) {
       FunctionalExchange fe = (FunctionalExchange) fci.getInvolved();
@@ -157,7 +157,7 @@ public class FC2FSInitialization {
   }
 
   private void createSequenceMessages(FunctionalChain fc, Scenario scenario) {
-    logInfo("Functional Chain without return branch is enabled");
+    logInfo("Functional Chain without return branch is enabled"); //$NON-NLS-1$
     for (FunctionalChainInvolvement fci : FunctionalChainExt.getFlatInvolvementsOf(fc,
         FaPackage.Literals.FUNCTIONAL_EXCHANGE)) {
       FunctionalExchange fe = (FunctionalExchange) fci.getInvolved();
@@ -199,15 +199,15 @@ public class FC2FSInitialization {
     trace.setSourceElement(scenario);
     scenario.getOwnedTraces().add(trace);
     getMapping().put(fc, scenario);
-    logInfo("Create Scenario " + scenario.getName() + " of kind " + scenario.getKind());
+    logInfo("Create Scenario " + scenario.getName() + " of kind " + scenario.getKind()); //$NON-NLS-1$ //$NON-NLS-2$
     return scenario;
   }
 
   private String getDefaultScenarioName(FunctionalChain fc) {
     if (fc instanceof OperationalProcess) {
-      return "[" + DiagramNamingConstants.ACTIVITY_SCENARIO_PREFIX + "] " + fc.getName();
+      return "[" + DiagramNamingConstants.ACTIVITY_SCENARIO_PREFIX + "] " + fc.getName(); //$NON-NLS-1$ //$NON-NLS-2$
     }
-    return "[" + DiagramNamingConstants.FUNCTION_SCENARIO_PREFIX + "] " + fc.getName();
+    return "[" + DiagramNamingConstants.FUNCTION_SCENARIO_PREFIX + "] " + fc.getName(); //$NON-NLS-1$ //$NON-NLS-2$
   }
 
   private ScenarioKind getScenarioKind(FunctionalChain fc) {
@@ -224,7 +224,7 @@ public class FC2FSInitialization {
       scenario.getOwnedInstanceRoles().add(instanceRole);
       instanceRole.setRepresentedInstance(func);
       getMapping().put(func, instanceRole);
-      logInfo("Create InstanceRole " + instanceRole.getName());
+      logInfo("Create InstanceRole " + instanceRole.getName()); //$NON-NLS-1$
     }
   }
 
@@ -232,7 +232,7 @@ public class FC2FSInitialization {
     SequenceMessage sequenceMessage = InteractionFactory.eINSTANCE.createSequenceMessage(fe.getName());
     scenario.getOwnedMessages().add(sequenceMessage);
     sequenceMessage.setKind(kind);
-    logInfo("Create SequenceMessage " + sequenceMessage.getName() + " of kind " + kind);
+    logInfo("Create SequenceMessage " + sequenceMessage.getName() + " of kind " + kind); //$NON-NLS-1$ //$NON-NLS-2$
     return sequenceMessage;
   }
 
@@ -263,21 +263,21 @@ public class FC2FSInitialization {
   }
 
   private ExecutionEnd crreateExecutionEnd(Scenario scenario, MessageEnd receivingEnd) {
-    ExecutionEnd execEnd = InteractionFactory.eINSTANCE.createExecutionEnd("endExec");
+    ExecutionEnd execEnd = InteractionFactory.eINSTANCE.createExecutionEnd("endExec"); //$NON-NLS-1$
     scenario.getOwnedInteractionFragments().add(execEnd);
     execEnd.getCoveredInstanceRoles().add(receivingEnd.getCoveredInstanceRoles().get(0));
     return execEnd;
   }
 
   private void createExecution(Scenario scenario, InteractionFragment start, InteractionFragment finish) {
-    Execution exec = InteractionFactory.eINSTANCE.createExecution("execution");
+    Execution exec = InteractionFactory.eINSTANCE.createExecution("execution"); //$NON-NLS-1$
     scenario.getOwnedTimeLapses().add(exec);
     exec.setStart(start);
     exec.setFinish(finish);
   }
 
   private void createEventSentOperation(Scenario scenario, FunctionalExchange fe, MessageEnd sendingEnd) {
-    EventSentOperation eventSentOp = InteractionFactory.eINSTANCE.createEventSentOperation("eventSentOp");
+    EventSentOperation eventSentOp = InteractionFactory.eINSTANCE.createEventSentOperation("eventSentOp"); //$NON-NLS-1$
     scenario.getOwnedEvents().add(eventSentOp);
     sendingEnd.setEvent(eventSentOp);
     eventSentOp.setOperation(fe);
@@ -290,7 +290,7 @@ public class FC2FSInitialization {
   }
 
   private void createEventReceiptOperation(Scenario scenario, FunctionalExchange fe, MessageEnd receivingEnd) {
-    EventReceiptOperation eventReceiptOp = InteractionFactory.eINSTANCE.createEventReceiptOperation("eventReceiptOp");
+    EventReceiptOperation eventReceiptOp = InteractionFactory.eINSTANCE.createEventReceiptOperation("eventReceiptOp"); //$NON-NLS-1$
     scenario.getOwnedEvents().add(eventReceiptOp);
     receivingEnd.setEvent(eventReceiptOp);
     eventReceiptOp.setOperation(fe);
@@ -298,7 +298,7 @@ public class FC2FSInitialization {
 
   private void createExecutionEvent(Scenario scenario, ExecutionEnd execEnd) {
     org.polarsys.capella.core.data.interaction.ExecutionEvent executionEvent = InteractionFactory.eINSTANCE
-        .createExecutionEvent("executionEvent");
+        .createExecutionEvent("executionEvent"); //$NON-NLS-1$
     scenario.getOwnedEvents().add(executionEvent);
     execEnd.setEvent(executionEvent);
   }
