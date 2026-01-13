@@ -41,7 +41,7 @@ public class DescriptionLinkParserHandler extends DefaultHandler {
   }
 
   public static String extractName(String statusMessage) {
-    String pattern = "with label \"(.*?)\""; // regular expression to match the name
+    String pattern = Messages.DescriptionLinkParserHandler_0; // regular expression to match the name
     Pattern r = Pattern.compile(pattern);
     Matcher m = r.matcher(statusMessage);
     if (m.find()) {
