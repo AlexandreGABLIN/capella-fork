@@ -195,10 +195,10 @@ public class WizardProjectCreationPage extends WizardPage {
     Group radioBox = new Group(parent_p, SWT.NONE);
     radioBox.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
     radioBox.setLayout(new GridLayout());
-    radioBox.setText("Description");
-    new Label(radioBox, SWT.None).setText("allow user to create a new Capella Project with Configuration Nature.");
+    radioBox.setText(org.polarsys.capella.core.preferences.configuration.project.IDEWorkbenchMessages.WizardProjectCreationPage_0);
+    new Label(radioBox, SWT.None).setText(org.polarsys.capella.core.preferences.configuration.project.IDEWorkbenchMessages.WizardProjectCreationPage_1);
     new Label(radioBox, SWT.None)
-        .setText("The Capella Configuration project is used as a store of customized capella project preferences.");
+        .setText(org.polarsys.capella.core.preferences.configuration.project.IDEWorkbenchMessages.WizardProjectCreationPage_2);
 
   }
 
@@ -356,9 +356,9 @@ public class WizardProjectCreationPage extends WizardPage {
    */
   protected boolean validatePage() {
     String projectFieldContents = getProjectNameFieldValue();
-    if ("".equals(projectFieldContents)) {
+    if ("".equals(projectFieldContents)) { //$NON-NLS-1$
       setErrorMessage(null);
-      setMessage("");
+      setMessage(""); //$NON-NLS-1$
       return false;
     }
 
