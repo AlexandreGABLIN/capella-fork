@@ -8,6 +8,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.emf.validation.model.ConstraintStatus;
+import org.eclipse.osgi.util.NLS;
 import org.polarsys.capella.core.model.utils.saxparser.SaxParserHelper;
 import org.polarsys.capella.core.platform.sirius.sirius.validation.ddiagram.LinkDescription;
 
@@ -37,19 +38,16 @@ public class MissingElementHandler implements ILinkParser {
       String elementId = parsedLink.getHref().replace("hlink://", ""); //$NON-NLS-1$ //$NON-NLS-2$
       if (!parsedLinks.contains(parsedLink)) {
         parsedLinks.add(parsedLink);
-        String failureMessage = "(Hyperlink) The model/diagram element with label \"" + parsedLink.getName()
-            + "\" (id: "
-            + elementId + ") can not be found for the rich text description of the element " + elementName;
+        String failureMessage = NLS.bind(Messages.MissingElementHandler_3, parsedLink.getName(), elementId, elementName);
         failureMessage = SaxParserHelper.unescapeSpecialCharacter(failureMessage);
-        result.add(ConstraintStatus.createStatus(ctx, element, ctx.getResultLocus(), "{0}", failureMessage));
+        result.add(ConstraintStatus.createStatus(ctx, element, ctx.getResultLocus(), Messages.MissingElementHandler_6, failureMessage));
       } else {
         List<IStatus> updatedResult = result.stream().map(sts -> {
           if (sts.getMessage().contains(elementId)) {
             String name = DescriptionLinkParserHandler.extractName(sts.getMessage());
-            String failureMessage = "(Hyperlink) The model/diagram elements with label \"" + name + "\", ... (id: "
-                + elementId + ") can not be found for the rich text description of the element " + elementName;
+            String failureMessage = NLS.bind(Messages.MissingElementHandler_7, name, elementId, elementName);
             failureMessage = SaxParserHelper.unescapeSpecialCharacter(failureMessage);
-            return ConstraintStatus.createStatus(ctx, element, ctx.getResultLocus(), "{0}", failureMessage);
+            return ConstraintStatus.createStatus(ctx, element, ctx.getResultLocus(), Messages.MissingElementHandler_10, failureMessage);
           }
           return sts;
         }).collect(Collectors.toList());
