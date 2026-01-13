@@ -78,7 +78,7 @@ public class I_43_ReferencingToAnAirdElement extends AbstractModelConstraint {
   private IStatus validateReference(IValidationContext ctx, EObject currentElement, EObject targetElement) {
     if (CapellaResourceHelper.isAirdElement(targetElement)) {
       return createFailureStatus(ctx, currentElement, targetElement, NamingHelper.getTitleLabel(currentElement),
-          "to aird element");
+          Messages.I_43_ReferencingToAnAirdElement_0);
     }
     return ctx.createSuccessStatus();
   }
