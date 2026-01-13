@@ -35,6 +35,10 @@ public class PreferencesUIMessages extends NLS {
   public static String prefs_description_constraint;
   public static String prefs_description_constraint_error;
   public static String prefs_constraints_also;
+
+  public static String UserProfilePreferencePage_0;
+
+  public static String UserProfilePreferencePage_1;
   public static String Validation_liveValidationGroupLabel;
   public static String Validation_liveValidationDestinationPrompt;
   public static String Validation_liveValidationDestination_dialogComboItem;
