@@ -33,7 +33,7 @@ import org.eclipse.ui.dialogs.ListSelectionDialog;
 import org.eclipse.ui.internal.IWorkbenchHelpContextIds;
 import org.eclipse.ui.internal.WorkbenchPlugin;
 import org.eclipse.ui.internal.preferences.PreferenceTransferElement;
-import org.eclipse.ui.internal.wizards.preferences.PreferencesMessages;
+import org.polarsys.capella.core.preferences.trasferers.PreferencesMessages;
 import org.eclipse.ui.internal.wizards.preferences.WizardPreferencesPage;
 import org.eclipse.ui.model.BaseWorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
@@ -50,8 +50,8 @@ public class WizardPreferencesTransfererExportPage extends WizardPreferencesPage
    */
   protected WizardPreferencesTransfererExportPage(String name) {
     super(name);
-    setTitle(PreferencesMessages.WizardPreferencesExportPage1_exportTitle);
-    setDescription(PreferencesMessages.WizardPreferencesExportPage1_exportDescription);
+    setTitle(org.eclipse.ui.internal.wizards.preferences.PreferencesMessages.WizardPreferencesExportPage1_exportTitle);
+    setDescription(org.eclipse.ui.internal.wizards.preferences.PreferencesMessages.WizardPreferencesExportPage1_exportDescription);
   }
 
   /**
@@ -96,12 +96,12 @@ public class WizardPreferencesTransfererExportPage extends WizardPreferencesPage
 
   @Override
   protected String getAllButtonText() {
-    return PreferencesMessages.WizardPreferencesExportPage1_all;
+    return org.eclipse.ui.internal.wizards.preferences.PreferencesMessages.WizardPreferencesExportPage1_all;
   }
 
   @Override
   protected String getChooseButtonText() {
-    return PreferencesMessages.WizardPreferencesExportPage1_choose;
+    return org.eclipse.ui.internal.wizards.preferences.PreferencesMessages.WizardPreferencesExportPage1_choose;
   }
 
   /**
@@ -131,7 +131,7 @@ public class WizardPreferencesTransfererExportPage extends WizardPreferencesPage
    */
   @Override
   protected String getDestinationLabel() {
-    return PreferencesMessages.WizardPreferencesExportPage1_file;
+    return org.eclipse.ui.internal.wizards.preferences.PreferencesMessages.WizardPreferencesExportPage1_file;
   }
 
   /*
@@ -180,7 +180,7 @@ public class WizardPreferencesTransfererExportPage extends WizardPreferencesPage
         
       } catch (IOException | CoreException e) {
         WorkbenchPlugin.log(e.getMessage(), e);
-        MessageDialog.open(MessageDialog.ERROR, getControl().getShell(), "", e.getLocalizedMessage(), SWT.SHEET);
+        MessageDialog.open(MessageDialog.ERROR, getControl().getShell(), "", e.getLocalizedMessage(), SWT.SHEET); //$NON-NLS-1$
         return false;
       }
     }
@@ -189,7 +189,7 @@ public class WizardPreferencesTransfererExportPage extends WizardPreferencesPage
 
   @Override
   protected String getFileDialogTitle() {
-    return PreferencesMessages.WizardPreferencesExportPage1_title;
+    return org.eclipse.ui.internal.wizards.preferences.PreferencesMessages.WizardPreferencesExportPage1_title;
   }
 
   @Override
@@ -203,7 +203,7 @@ public class WizardPreferencesTransfererExportPage extends WizardPreferencesPage
    */
   @Override
   protected String getInvalidDestinationMessage() {
-    return PreferencesMessages.WizardPreferencesExportPage1_noPrefFile;
+    return org.eclipse.ui.internal.wizards.preferences.PreferencesMessages.WizardPreferencesExportPage1_noPrefFile;
   }
 
   /*
@@ -238,8 +238,8 @@ public class WizardPreferencesTransfererExportPage extends WizardPreferencesPage
     IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
     ListSelectionDialog dlg =
         new ListSelectionDialog(window.getShell(), ResourcesPlugin.getWorkspace().getRoot(), new BaseWorkbenchContentProvider(), new WorkbenchLabelProvider(),
-            "Select the Project:");
-    dlg.setTitle("Project Selection");
+            PreferencesMessages.WizardPreferencesTransfererExportPage_1);
+    dlg.setTitle(PreferencesMessages.WizardPreferencesTransfererExportPage_2);
     dlg.open();
   }
 
