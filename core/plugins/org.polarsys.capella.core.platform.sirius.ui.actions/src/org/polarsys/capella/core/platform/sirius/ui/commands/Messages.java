@@ -18,6 +18,7 @@ import org.eclipse.osgi.util.NLS;
  */
 public class Messages extends NLS {
   private static final String BUNDLE_NAME = "org.polarsys.capella.core.platform.sirius.ui.commands.messages"; //$NON-NLS-1$
+  public static String AbstractFixCommand_0;
   public static String CapellaCloneDiagramCommand_CloneName_Prefix;
   public static String CapellaCloneDiagramCommand_CommandLabel;
   public static String CapellaDeleteCommand_CancelDeletionMessage;
