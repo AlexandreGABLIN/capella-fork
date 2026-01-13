@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.osgi.util.NLS;
 import org.polarsys.capella.common.data.modellingcore.InformationsExchanger;
 import org.polarsys.capella.common.data.modellingcore.TraceableElement;
 import org.polarsys.capella.common.platform.sirius.ted.SemanticEditingDomainFactory.SemanticEditingDomain;
@@ -84,7 +85,7 @@ public class PhysicalLinksCreator extends DefaultExchangesCreator {
     if (isValidBound(_component)) {
       boolean physicalLinkCreated = createPhysicalLinksFromCExchanges(_component);
       if (!physicalLinkCreated) {
-        String message = "No physical link has been created.";
+        String message = Messages.PhysicalLinksCreator_0;
         EmbeddedMessage eMessage = new EmbeddedMessage(message, logger.getName());
         logger.info(eMessage);
       }
@@ -199,8 +200,8 @@ public class PhysicalLinksCreator extends DefaultExchangesCreator {
     if ((componentExchange.getKind() == ComponentExchangeKind.DELEGATION)
         || (componentExchange.getKind() == ComponentExchangeKind.UNSET)
         || doesNodeAlreadyHasAPhysicalLinkForComponentExchange(sourceContainer, componentExchange)) {
-      String message = "Component exchange " + componentExchange.getName()
-          + " already has a physical link or the kind is not suitable.";
+      String message = Messages.PhysicalLinksCreator_1 + componentExchange.getName()
+          + Messages.PhysicalLinksCreator_2;
       EmbeddedMessage eMessage = new EmbeddedMessage(message, logger.getName(), componentExchange);
       logger.error(eMessage);
       return null;
@@ -210,12 +211,12 @@ public class PhysicalLinksCreator extends DefaultExchangesCreator {
     Component target = computePhysicalLinkBound(targetContained);
     Component source = computePhysicalLinkBound(sourceContained);
     if (!isValidPhysicalLinkBound(source)) {
-      String message = "Component " + source.getName() + " cannot host a Physical Link.";
+      String message = NLS.bind(Messages.PhysicalLinksCreator_3, source.getName());
       EmbeddedMessage eMessage = new EmbeddedMessage(message, logger.getName(), source);
       logger.error(eMessage);
       return null;
     } else if (!isValidPhysicalLinkBound(target)) {
-      String message = "Component " + target.getName() + " cannot host a Physical Link.";
+      String message = NLS.bind(Messages.PhysicalLinksCreator_5, target.getName());
       EmbeddedMessage eMessage = new EmbeddedMessage(message, logger.getName(), target);
       logger.error(eMessage);
       return null;
@@ -386,8 +387,7 @@ public class PhysicalLinksCreator extends DefaultExchangesCreator {
 
     exchangeInput.getOwnedPhysicalLinks().add(physicalLink);
     exchangeOutput.getOwnedPhysicalLinks().add(physicalLink);
-    String message = "The Physical link " + physicalLink.getName() + " has been succefully created between the source "
-        + exchangeOutput.getLabel() + " and the target " + exchangeInput.getLabel();
+    String message = NLS.bind(Messages.PhysicalLinksCreator_7, physicalLink.getName(), exchangeOutput.getLabel(), exchangeInput.getLabel());
     EmbeddedMessage eMessage = new EmbeddedMessage(message, logger.getName(),
         Arrays.asList(physicalLink, exchangeOutput, exchangeInput));
     logger.info(eMessage);
