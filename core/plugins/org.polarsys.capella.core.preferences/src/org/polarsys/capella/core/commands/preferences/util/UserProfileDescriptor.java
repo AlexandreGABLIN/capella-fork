@@ -85,7 +85,7 @@ public class UserProfileDescriptor extends AbstractItemDescriptor implements IUs
 	 */
 	@Override
 	public String getDescription() {
-		return "Expert User";
+		return Messages.UserProfileDescriptor_0;
 	}
 
 }
