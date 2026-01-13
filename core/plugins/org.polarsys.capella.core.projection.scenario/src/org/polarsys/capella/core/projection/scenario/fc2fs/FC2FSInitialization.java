@@ -22,6 +22,7 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.osgi.util.NLS;
 import org.polarsys.capella.common.data.activity.ActivityNode;
 import org.polarsys.capella.common.tools.report.config.registry.ReportManagerRegistry;
 import org.polarsys.capella.core.data.capellacommon.CapellacommonFactory;
@@ -49,6 +50,7 @@ import org.polarsys.capella.core.diagram.helpers.naming.DiagramNamingConstants;
 import org.polarsys.capella.core.model.helpers.FunctionalChainExt;
 import org.polarsys.capella.core.model.helpers.refmap.Pair;
 import org.polarsys.capella.core.model.utils.NamingHelper;
+import org.polarsys.capella.core.projection.scenario.uml2.rules.Messages;
 
 public class FC2FSInitialization {
 
@@ -77,9 +79,8 @@ public class FC2FSInitialization {
       // Look for existing scenarios and ask the user if he want to continue when found Scenarios
       Collection<Scenario> availableInitializedScenarios = FC2FSExt.getAvailableInitializedScenarios(fc);
       if (!availableInitializedScenarios.isEmpty()) {
-        if (MessageDialog.openQuestion(FC2FSExt.getActiveShell(), "Confirm Initialization",
-            "Are you sure you want to initialize new Scenario for " + fc.getName()
-                + "? Initialized Scenario(s) found.")) {
+        if (MessageDialog.openQuestion(FC2FSExt.getActiveShell(), Messages.FC2FSInitialization_0,
+            NLS.bind(Messages.FC2FSInitialization_1, fc.getName()))) {
           doExecute(fc, isMsgWithReply, fc2ScenarioPairs);
         }
       } else {
@@ -237,7 +238,7 @@ public class FC2FSInitialization {
   }
 
   private MessageEnd createSendingEnd(Scenario scenario, FunctionalExchange fe, SequenceMessage sequenceMessage) {
-    MessageEnd msgEnd = InteractionFactory.eINSTANCE.createMessageEnd("Send Call Message Call");
+    MessageEnd msgEnd = InteractionFactory.eINSTANCE.createMessageEnd(Messages.FC2FSInitialization_3);
     scenario.getOwnedInteractionFragments().add(msgEnd);
     sequenceMessage.setSendingEnd(msgEnd);
     // When it's a reply message use fe's target to find the instance role otherwise use the source
@@ -250,7 +251,7 @@ public class FC2FSInitialization {
   }
 
   private MessageEnd createReceivingEnd(Scenario scenario, FunctionalExchange fe, SequenceMessage sequenceMessage) {
-    MessageEnd receiveEnd = InteractionFactory.eINSTANCE.createMessageEnd("Receive Call Message Call");
+    MessageEnd receiveEnd = InteractionFactory.eINSTANCE.createMessageEnd(Messages.FC2FSInitialization_4);
     scenario.getOwnedInteractionFragments().add(receiveEnd);
     sequenceMessage.setReceivingEnd(receiveEnd);
     // When it's a reply message use fe's source to find the instance role otherwise use the target
