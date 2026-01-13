@@ -4,7 +4,6 @@ import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
-	public static String DescriptionLinkParserHandler_0;
 	public static String InvalidNameHandler_10;
 	public static String InvalidNameHandler_11;
 	public static String InvalidNameHandler_12;
