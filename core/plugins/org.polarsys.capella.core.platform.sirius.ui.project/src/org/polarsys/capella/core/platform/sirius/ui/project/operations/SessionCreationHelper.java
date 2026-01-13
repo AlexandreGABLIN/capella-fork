@@ -202,18 +202,18 @@ public class SessionCreationHelper {
 
     try {
 
-      progress.beginTask("Create an empty resource", 1);
+      progress.beginTask(Messages.getString("SessionCreationHelper.0"), 1); //$NON-NLS-1$
       Resource semanticResource = CapellaResourceHelper.createCapellaResource(eclipseProject, eclipseProject.getName(), domain);
       progress.worked(1);
 
-      progress.beginTask("Create semantic root element", 1);
+      progress.beginTask(Messages.getString("SessionCreationHelper.1"), 1); //$NON-NLS-1$
       command = createInitialElementsCommand(semanticResource, eclipseProject.getName(), monitor);
       if (command != null) {
         manager.execute(command);
       }
       progress.worked(1);
 
-      progress.beginTask("Create initial skeletton", 1);
+      progress.beginTask(Messages.getString("SessionCreationHelper.2"), 1); //$NON-NLS-1$
       command = updateInitialElementsCommand(semanticResource, eclipseProject.getName(), monitor);
       if (command != null) {
         manager.execute(command);
@@ -221,7 +221,7 @@ public class SessionCreationHelper {
       progress.worked(1);
 
       try {
-        progress.beginTask("Save semantic model", 1);
+        progress.beginTask(Messages.getString("SessionCreationHelper.3"), 1); //$NON-NLS-1$
         semanticResource.save(Collections.emptyMap());
       } catch (Exception e) {
         // we couldn't do this
@@ -281,7 +281,7 @@ public class SessionCreationHelper {
       // Disable Activity Explorer before open session, because a refresh will occurs on each viewpoint activation
       boolean backup = disableActivityExplorerOnOpenSession();
 
-      String eventName = "Open Session";
+      String eventName = Messages.getString("SessionCreationHelper.4"); //$NON-NLS-1$
       String eventContext = buildAirdFileName(eclipseProject, projectName).lastSegment();
       UsageMonitoringLogger.getInstance().log(eventName, eventContext, EventStatus.NONE);
       
