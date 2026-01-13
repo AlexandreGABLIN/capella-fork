@@ -186,7 +186,7 @@ public class SampleModelWizard extends AbstractExampleInstallerWizard {
         super.itemSelected();
       }
     };
-    projectPage.setDescription("Select a sample project to import");
+    projectPage.setDescription(Messages.SampleModelWizard_3);
     addPage(projectPage);
   }
 
