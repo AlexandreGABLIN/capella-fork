@@ -38,16 +38,19 @@ public class MissingElementHandler implements ILinkParser {
       String elementId = parsedLink.getHref().replace("hlink://", ""); //$NON-NLS-1$ //$NON-NLS-2$
       if (!parsedLinks.contains(parsedLink)) {
         parsedLinks.add(parsedLink);
-        String failureMessage = NLS.bind(Messages.MissingElementHandler_3, parsedLink.getName(), elementId, elementName);
+        String failureMessage = "(Hyperlink) The model/diagram element with label \"" + parsedLink.getName() // DO NOT TRANSLATE
+            + "\" (id: " //DO NOT TRANSLATE
+            + elementId + ") can not be found for the rich text description of the element " + elementName; //DO NOT TRANSLATE
         failureMessage = SaxParserHelper.unescapeSpecialCharacter(failureMessage);
-        result.add(ConstraintStatus.createStatus(ctx, element, ctx.getResultLocus(), Messages.MissingElementHandler_6, failureMessage));
+        result.add(ConstraintStatus.createStatus(ctx, element, ctx.getResultLocus(), "{0}", failureMessage));
       } else {
         List<IStatus> updatedResult = result.stream().map(sts -> {
           if (sts.getMessage().contains(elementId)) {
-            String name = DescriptionLinkParserHandler.extractName(sts.getMessage());
-            String failureMessage = NLS.bind(Messages.MissingElementHandler_7, name, elementId, elementName);
+            String name = DescriptionLinkParserHandler.extractName(sts.getMessage()); //DO NOT TRANSLATE
+            String failureMessage = "(Hyperlink) The model/diagram elements with label \"" + name + "\", ... (id: " //DO NOT TRANSLATE
+                + elementId + ") can not be found for the rich text description of the element " + elementName; //DO NOT TRANSLATE
             failureMessage = SaxParserHelper.unescapeSpecialCharacter(failureMessage);
-            return ConstraintStatus.createStatus(ctx, element, ctx.getResultLocus(), Messages.MissingElementHandler_10, failureMessage);
+            return ConstraintStatus.createStatus(ctx, element, ctx.getResultLocus(), "{0}", failureMessage);
           }
           return sts;
         }).collect(Collectors.toList());

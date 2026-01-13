@@ -20,14 +20,6 @@ public class Messages extends NLS {
 	public static String InvalidNameHandler_7;
 	public static String InvalidNameHandler_8;
 	public static String InvalidNameHandler_9;
-	public static String MissingElementHandler_10;
-	public static String MissingElementHandler_3;
-	public static String MissingElementHandler_4;
-	public static String MissingElementHandler_5;
-	public static String MissingElementHandler_6;
-	public static String MissingElementHandler_7;
-	public static String MissingElementHandler_8;
-	public static String MissingElementHandler_9;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
