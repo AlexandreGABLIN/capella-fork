@@ -142,7 +142,7 @@ public class DefaultExchangesCreator implements IExchangesCreator {
       }
     }
     if (!exchangeCreated) {
-      String message = "No component exchange has been created.";
+      String message = Messages.DefaultExchangesCreator_0;
       EmbeddedMessage eMessage = new EmbeddedMessage(message, logger.getName());
       logger.info(eMessage);
     }
