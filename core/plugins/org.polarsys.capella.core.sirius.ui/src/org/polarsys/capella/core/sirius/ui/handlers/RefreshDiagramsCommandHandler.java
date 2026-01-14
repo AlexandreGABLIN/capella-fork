@@ -196,7 +196,7 @@ public class RefreshDiagramsCommandHandler extends AbstractDiagramCommandHandler
             String repDescInfo = addRepDescInfo(strBuilder, repDesc);
 
             Logger.getLogger(IReportManagerDefaultComponents.DIAGRAM)
-                .error(new EmbeddedMessage("The representation can not be loaded (invalid): " + repDescInfo, "",
+                .error(new EmbeddedMessage("The representation can not be loaded (invalid): " + repDescInfo, "", //$NON-NLS-1$ //$NON-NLS-2$
                     Collections.singletonList(repDesc)));
           });
         }
@@ -206,8 +206,8 @@ public class RefreshDiagramsCommandHandler extends AbstractDiagramCommandHandler
             String repDescInfo = addRepDescInfo(strBuilder, repDesc);
 
             Logger.getLogger(IReportManagerDefaultComponents.DIAGRAM)
-                .error(new EmbeddedMessage("The representation has no valid semantic target (invalid): " + repDescInfo,
-                    "", Collections.singletonList(repDesc)));
+                .error(new EmbeddedMessage("The representation has no valid semantic target (invalid): " + repDescInfo, //$NON-NLS-1$
+                    "", Collections.singletonList(repDesc))); //$NON-NLS-1$
           });
         }
         if (representationWithOtherErrors.size() > 0) {
@@ -216,7 +216,7 @@ public class RefreshDiagramsCommandHandler extends AbstractDiagramCommandHandler
             String repDescInfo = addRepDescInfo(strBuilder, repDesc);
 
             Logger.getLogger(IReportManagerDefaultComponents.DIAGRAM).warn(new EmbeddedMessage(
-                "The representation failed to refresh: " + repDescInfo, "", Collections.singletonList(repDesc)));
+                "The representation failed to refresh: " + repDescInfo, "", Collections.singletonList(repDesc))); //$NON-NLS-1$ //$NON-NLS-2$
           });
         }
       }
@@ -225,7 +225,7 @@ public class RefreshDiagramsCommandHandler extends AbstractDiagramCommandHandler
 
     private String addRepDescInfo(StringBuilder strBuilder, DRepresentationDescriptor repDesc) {
       String repDescInfo = getRepDescInfo(repDesc);
-      strBuilder.append("\n - ");
+      strBuilder.append("\n - "); //$NON-NLS-1$
       strBuilder.append(repDescInfo);
       return repDescInfo;
     }
