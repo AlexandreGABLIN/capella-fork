@@ -18,6 +18,7 @@ import org.eclipse.osgi.util.NLS;
  */
 public class Messages extends NLS {
   private static final String BUNDLE_NAME = "org.polarsys.capella.core.sirius.ui.messages"; //$NON-NLS-1$
+  public static String CloseSessionAction_0;
   public static String CloseSessionAction_Title;
   public static String ControlAction__UI_Control_menu_item;
   public static String ControlAction__UI_Control_menu_item_description;
