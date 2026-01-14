@@ -98,7 +98,7 @@ public class ModeStateMachineServices {
       target = target.eContainer();
     }
     if (target instanceof AbstractFunction) {
-      return EObjectExt.getText(fe) + Messages.ModeStateMachineServices_3 + EObjectExt.getText(target) + "]"; //$NON-NLS-2$ //$NON-NLS-1$
+      return EObjectExt.getText(fe) + " [-> " + EObjectExt.getText(target) + "]"; //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-1$
     }
     return ""; //$NON-NLS-1$
   }
