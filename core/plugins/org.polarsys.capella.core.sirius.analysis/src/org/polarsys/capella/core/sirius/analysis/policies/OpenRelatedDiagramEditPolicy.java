@@ -127,7 +127,7 @@ public class OpenRelatedDiagramEditPolicy extends OpenDiagramEditPolicy {
                   RepresentationDescription description = descriptions.iterator().next();
                   IInterpreter interpreter = InterpreterUtil.getInterpreter(targetSemanticElement);
                   String titleExpression = description.getTitleExpression();
-                  String newName = "";
+                  String newName = ""; //$NON-NLS-1$
                   try {
                     newName = interpreter.evaluateString(targetSemanticElement, titleExpression);
                   } catch (EvaluationException e) {
