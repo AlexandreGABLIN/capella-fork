@@ -21,6 +21,7 @@ public class Messages extends NLS {
   private static final String BUNDLE_NAME = "org.polarsys.capella.core.sirius.analysis.messages"; //$NON-NLS-1$
   public static String ABServices_UnallocatedFunctions;
   public static String ABServices_UnallocatedRoles;
+  public static String blankName;
   public static String Diagram_TID_Implemented;
   public static String Diagram_TID_Provided;
   public static String Diagram_TID_Required;
@@ -85,6 +86,7 @@ public class Messages extends NLS {
   public static String SequenceDiagramServices_2;
   public static String SequenceDiagramServices_3;
   public static String OpenRelatedDiagram_Message;
+  public static String OpenRelatedDiagramEditPolicy_1;
   public static String CreateRepresentationLabel;
   public static String FunctionalChainServices_12;
   public static String FunctionalChainServices_13;
