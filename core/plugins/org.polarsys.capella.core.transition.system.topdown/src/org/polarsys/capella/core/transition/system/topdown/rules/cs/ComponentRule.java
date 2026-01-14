@@ -33,7 +33,7 @@ import org.polarsys.capella.core.model.helpers.BlockArchitectureExt;
 import org.polarsys.capella.core.model.helpers.ComponentExt;
 import org.polarsys.capella.core.model.helpers.ComponentPkgExt;
 import org.polarsys.capella.core.transition.common.constants.ITransitionConstants;
-import org.polarsys.capella.core.transition.common.constants.Messages;
+import org.polarsys.capella.core.transition.system.topdown.rules.cs.Messages;
 import org.polarsys.capella.core.transition.common.handlers.contextscope.ContextScopeHandlerHelper;
 import org.polarsys.capella.core.transition.common.handlers.contextscope.IContextScopeHandler;
 import org.polarsys.capella.core.transition.common.handlers.options.IOptionsHandler;
@@ -201,7 +201,7 @@ public class ComponentRule extends org.polarsys.capella.core.transition.system.r
         context_p)) {
       return Status.OK_STATUS;
     }
-    return new Status(IStatus.WARNING, Messages.Activity_Transition, "Component already transitioned");
+    return new Status(IStatus.WARNING, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transition, Messages.ComponentRule_0);
   }
 
 }

@@ -4,6 +4,8 @@ import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
+	
+	public static String ComponentRule_0;
 	public static String PhysicalLinkRule_0;
 	public static String PhysicalLinkRule_1;
 	public static String PhysicalLinkRule_2;
