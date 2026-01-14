@@ -75,8 +75,8 @@ public class StringPropertyPreference extends AbstractProperty implements IEdita
         String value = String.valueOf(newValue);
 
         String validOnEmpty = getParameter(PropertiesSchemaConstants.PropertiesSchema_STRING_PROPERTY__EMPTY_IS_VALID);
-        if ((validOnEmpty != null) && "false".equals(validOnEmpty) && (value.length() == 0)) {
-          return new Status(IStatus.ERROR, getId(), "Empty value isn't valid");
+        if ((validOnEmpty != null) && Messages.StringPropertyPreference_0.equals(validOnEmpty) && (value.length() == 0)) {
+          return new Status(IStatus.ERROR, getId(), Messages.StringPropertyPreference_2);
         }
       }
 
