@@ -107,7 +107,7 @@ public class NewRepresentationAction extends AbstractNewRepresentationAction {
       String dialogTitle = "New " + descriptionLabel; //$NON-NLS-1$
       String dialogMessage;
       if(message != null) {
-        dialogMessage = message + "\n" + "Name:"; //$NON-NLS-1$
+        dialogMessage = message + "\n" + "Name:"; //$NON-NLS-1$ //$NON-NLS-2$
       } else {
         dialogMessage = "Name:"; //$NON-NLS-1$
       }
