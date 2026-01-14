@@ -20,6 +20,7 @@ import org.eclipse.osgi.util.NLS;
 public class Messages extends NLS {
   private static final String BUNDLE_NAME = "org.polarsys.capella.core.sirius.analysis.actions.extensions.messages"; //$NON-NLS-1$
   public static String SelectElementFromListWizard_Title;
+  public static String SelectElementsFromCheckBoxWizard_2;
   public static String SelectOrCreateFunctionalExchangeWizard_0;
   public static String SelectOrCreateFunctionalExchangeWizard_1;
   public static String SelectOrCreateFunctionalExchangeWizard_2;
