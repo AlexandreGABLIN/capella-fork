@@ -2445,10 +2445,10 @@ public class InformationServices {
         // Show Modifiers suffix
         if (isShowModifiersEnable(context, view)) {
           if (pro.isOrdered()) {
-            beginLabel.append(" {ordered}");
+            beginLabel.append(" {ordered}"); //$NON-NLS-1$
           }
           if (!pro.isUnique()) {
-            beginLabel.append(" {nonUnique}");
+            beginLabel.append(" {nonUnique}"); //$NON-NLS-1$
           }
         }
       }
@@ -2519,10 +2519,10 @@ public class InformationServices {
         // Show Modifiers
         if (isShowModifiersEnable(context, view)) {
           if (pro.isOrdered()) {
-            endLabel.append(" {ordered}");
+            endLabel.append(" {ordered}"); //$NON-NLS-1$
           }
           if (!pro.isUnique()) {
-            endLabel.append(" {nonUnique}");
+            endLabel.append(" {nonUnique}"); //$NON-NLS-1$
           }
         }
       }
@@ -3060,7 +3060,7 @@ public class InformationServices {
     while (itResultList.hasNext()) {
       result.append(itResultList.next());
       if (itResultList.hasNext()) {
-        result.append("::");
+        result.append("::"); //$NON-NLS-1$
       }
     }
     return result.toString();
@@ -3527,27 +3527,27 @@ public class InformationServices {
    * @return
    */
   public String modifiersSuffix(EObject context, EObject view) {
-    String str = "";
+    String str = ""; //$NON-NLS-1$
     if (isShowModifiersEnable(context, view)) {
       if (context instanceof Property) {
         Property prop = (Property) context;
         if (prop.isOrdered()) {
-          str += " {ordered}";
+          str += " {ordered}"; //$NON-NLS-1$
         }
         if (!prop.isUnique()) {
-          str += " {nonUnique}";
+          str += " {nonUnique}"; //$NON-NLS-1$
         }
       }
       if (context instanceof ExchangeItemElement) {
         ExchangeItemElement eie = (ExchangeItemElement) context;
         if (eie.isOrdered()) {
-          str += " {ordered}";
+          str += " {ordered}"; //$NON-NLS-1$
         }
         if (!eie.isUnique()) {
-          str += " {nonUnique}";
+          str += " {nonUnique}"; //$NON-NLS-1$
         }
         if (!eie.isComposite()) {
-          str += " {nonComposite}";
+          str += " {nonComposite}"; //$NON-NLS-1$
         }
       }
     }
