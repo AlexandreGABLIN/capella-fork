@@ -45,7 +45,7 @@ public class HeadlessIntramodelLauncher extends TransitionLauncher {
 
   @Override
   protected String getReportComponent() {
-    return "Transition";
+    return Messages.HeadlessIntramodelLauncher_0;
   }
 
   @Override
@@ -59,52 +59,52 @@ public class HeadlessIntramodelLauncher extends TransitionLauncher {
     String kind = getOptionScope();
 
     if (ITopDownConstants.TRANSITION_TOPDOWN_ACTOR.equals(kind)) {
-      return "Actor Transition";
+      return Messages.HeadlessIntramodelLauncher_1;
 
     } else if (ITopDownConstants.TRANSITION_TOPDOWN_CAPABILITY.equals(kind)) {
-      return "Capability Transition";
+      return Messages.HeadlessIntramodelLauncher_2;
 
     } else if (ITopDownConstants.TRANSITION_TOPDOWN_DATA.equals(kind)) {
-      return "Data Transition";
+      return Messages.HeadlessIntramodelLauncher_3;
 
     } else if (ITopDownConstants.TRANSITION_TOPDOWN_EXCHANGEITEM.equals(kind)) {
-      return "Exchange Item Transition";
+      return Messages.HeadlessIntramodelLauncher_4;
 
     } else if (ITopDownConstants.TRANSITION_TOPDOWN_FUNCTIONAL.equals(kind)) {
-      return "Functional Transition";
+      return Messages.HeadlessIntramodelLauncher_5;
 
     } else if (ITopDownConstants.TRANSITION_TOPDOWN_INTERFACE.equals(kind)) {
-      return "Interface Transition";
+      return Messages.HeadlessIntramodelLauncher_6;
 
     } else if (ITopDownConstants.TRANSITION_TOPDOWN_LC2PC.equals(kind)) {
-      return "LC / LA to PC / PA Transition";
+      return Messages.HeadlessIntramodelLauncher_7;
 
     } else if (ITopDownConstants.TRANSITION_TOPDOWN_OA2SC.equals(kind)) {
-      return "Operational Activity to System Capability Transition";
+      return Messages.HeadlessIntramodelLauncher_8;
 
     } else if (ITopDownConstants.TRANSITION_TOPDOWN_OA2SM.equals(kind)) {
-      return "Operational Activity to System Mission Transition";
+      return Messages.HeadlessIntramodelLauncher_9;
 
     } else if (ITopDownConstants.TRANSITION_TOPDOWN_OC2SM.equals(kind)) {
-      return "Operational Capability to System Mission Transition";
+      return Messages.HeadlessIntramodelLauncher_10;
 
     } else if (ITopDownConstants.TRANSITION_TOPDOWN_OE2ACTOR.equals(kind)) {
-      return "Operational Entity to System Actor Transition";
+      return Messages.HeadlessIntramodelLauncher_11;
 
     } else if (ITopDownConstants.TRANSITION_TOPDOWN_OE2SYSTEM.equals(kind)) {
-      return "Operational Entity to System Transition";
+      return Messages.HeadlessIntramodelLauncher_12;
 
     } else if (ITopDownConstants.TRANSITION_TOPDOWN_PROPERTYVALUE.equals(kind)) {
-      return "Property Value Transition";
+      return Messages.HeadlessIntramodelLauncher_13;
 
     } else if (ITopDownConstants.TRANSITION_TOPDOWN_STATEMACHINE.equals(kind)) {
-      return "State Machine Transition";
+      return Messages.HeadlessIntramodelLauncher_14;
 
     } else if (ITopDownConstants.TRANSITION_TOPDOWN_SYSTEM.equals(kind)) {
-      return "System Transition";
+      return Messages.HeadlessIntramodelLauncher_15;
       
     } else if (ITopDownConstants.TRANSITION_TOPDOWN_PC2CI.equals(kind)) {
-      return "PC to CI Transition";
+      return Messages.HeadlessIntramodelLauncher_16;
     }
 
     return getOptionScope();
