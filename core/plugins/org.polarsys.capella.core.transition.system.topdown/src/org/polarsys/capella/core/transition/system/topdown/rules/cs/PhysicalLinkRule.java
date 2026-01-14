@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.polarsys.capella.core.data.cs.CsPackage;
 import org.polarsys.capella.core.data.cs.PhysicalLink;
 import org.polarsys.capella.core.transition.common.constants.ITransitionConstants;
-import org.polarsys.capella.core.transition.common.constants.Messages;
 import org.polarsys.capella.core.transition.common.handlers.contextscope.ContextScopeHandlerHelper;
 import org.polarsys.capella.core.transition.common.handlers.transformation.TransformationHandlerHelper;
 import org.polarsys.kitalpha.transposer.rules.handler.rules.api.IContext;
@@ -70,21 +69,21 @@ public class PhysicalLinkRule extends org.polarsys.capella.core.transition.syste
     if (result.isOK()) {
       PhysicalLink element = (PhysicalLink) element_p;
       if (!ContextScopeHandlerHelper.getInstance(context_p).contains(ITransitionConstants.SOURCE_SCOPE, element_p, context_p)) {
-        return new Status(IStatus.WARNING, Messages.Activity_Transition, "not in scope");
+        return new Status(IStatus.WARNING, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transition, Messages.PhysicalLinkRule_0);
       }
       if (org.polarsys.capella.core.data.helpers.cs.services.PhysicalLinkExt.getSource(element) == null) {
-        return new Status(IStatus.WARNING, Messages.Activity_Transition, "source null");
+        return new Status(IStatus.WARNING, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transition, Messages.PhysicalLinkRule_1);
       }
       if (org.polarsys.capella.core.data.helpers.cs.services.PhysicalLinkExt.getTarget(element) == null) {
-        return new Status(IStatus.WARNING, Messages.Activity_Transition, "target null");
+        return new Status(IStatus.WARNING, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transition, Messages.PhysicalLinkRule_2);
       }
       if (!TransformationHandlerHelper.getInstance(context_p)
           .isOrWillBeTransformed(org.polarsys.capella.core.data.helpers.cs.services.PhysicalLinkExt.getSource(element), context_p).isOK()) {
-        return new Status(IStatus.WARNING, Messages.Activity_Transition, "source");
+        return new Status(IStatus.WARNING, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transition, Messages.PhysicalLinkRule_3);
       }
       if (!TransformationHandlerHelper.getInstance(context_p)
           .isOrWillBeTransformed(org.polarsys.capella.core.data.helpers.cs.services.PhysicalLinkExt.getTarget(element), context_p).isOK()) {
-        return new Status(IStatus.WARNING, Messages.Activity_Transition, "target");
+        return new Status(IStatus.WARNING, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transition, Messages.PhysicalLinkRule_4);
       }
       java.util.Collection<EObject> transfoSources = (java.util.Collection<EObject>) context_p.get(ITransitionConstants.TRANSITION_SOURCES);
       if (transfoSources.contains(element_p)) {
