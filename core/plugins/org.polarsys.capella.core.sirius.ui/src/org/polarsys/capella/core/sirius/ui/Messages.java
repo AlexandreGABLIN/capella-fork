@@ -47,6 +47,7 @@ public class Messages extends NLS {
   public static String CapellaSessionHelper_SemanticModel_ErrorDialog_Title;
   public static String CapellaSessionHelper_UnknownError_Message;
   public static String MoveRepresentationsAction_move;
+  public static String OpenSessionAction_0;
   public static String OpenSessionAction_Title;
   public static String RenameRepresentationAction_Title;
   public static String SelectRepresentationsWizard_Title;

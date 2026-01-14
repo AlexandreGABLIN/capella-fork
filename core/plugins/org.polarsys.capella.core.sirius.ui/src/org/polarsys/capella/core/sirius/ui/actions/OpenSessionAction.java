@@ -103,7 +103,7 @@ public class OpenSessionAction extends BaseSelectionListenerAction {
       }
       
       Session session = null;
-      String eventName = "Open Session";
+      String eventName = Messages.OpenSessionAction_0;
       String eventContext = selectedFile.getName();
       UsageMonitoringLogger.getInstance().log(eventName, eventContext, EventStatus.NONE);
 
