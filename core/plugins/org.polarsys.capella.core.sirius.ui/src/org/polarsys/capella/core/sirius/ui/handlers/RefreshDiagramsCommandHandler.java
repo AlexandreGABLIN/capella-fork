@@ -180,9 +180,9 @@ public class RefreshDiagramsCommandHandler extends AbstractDiagramCommandHandler
 
       StringBuilder strBuilder = new StringBuilder();
       if (nbRefreshWithSuccess > 1) {
-        strBuilder.append(nbRefreshWithSuccess + " representations refreshed");
+        strBuilder.append(NLS.bind(Messages.RefreshDiagramsCommandHandler_0, nbRefreshWithSuccess));
       } else {
-        strBuilder.append(nbRefreshWithSuccess + " representation refreshed");
+        strBuilder.append(NLS.bind(Messages.RefreshDiagramsCommandHandler_1, nbRefreshWithSuccess));
       }
 
       int severity = IStatus.OK;
