@@ -191,7 +191,7 @@ public class RefreshDiagramsCommandHandler extends AbstractDiagramCommandHandler
         severity = IStatus.WARNING;
         strBuilder.append(NLS.bind(Messages.RefreshDiagramsCommandHandler_2, nbRefreshWithError));
         if (representationNotLoadable.size() > 0) {
-          strBuilder.append("\nNot loadable representation(s) (invalid)");
+          strBuilder.append(Messages.RefreshDiagramsCommandHandler_4);
           representationNotLoadable.stream().forEach(repDesc -> {
             String repDescInfo = addRepDescInfo(strBuilder, repDesc);
 
@@ -201,7 +201,7 @@ public class RefreshDiagramsCommandHandler extends AbstractDiagramCommandHandler
           });
         }
         if (representationDangling.size() > 0) {
-          strBuilder.append("\nRepresentation(s) with no valid semantic target (invalid)");
+          strBuilder.append(Messages.RefreshDiagramsCommandHandler_7);
           representationDangling.stream().forEach(repDesc -> {
             String repDescInfo = addRepDescInfo(strBuilder, repDesc);
 
@@ -211,7 +211,7 @@ public class RefreshDiagramsCommandHandler extends AbstractDiagramCommandHandler
           });
         }
         if (representationWithOtherErrors.size() > 0) {
-          strBuilder.append("\nRepresentation(s) that failed to refresh");
+          strBuilder.append(Messages.RefreshDiagramsCommandHandler_10);
           representationWithOtherErrors.stream().forEach(repDesc -> {
             String repDescInfo = addRepDescInfo(strBuilder, repDesc);
 

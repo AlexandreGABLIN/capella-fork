@@ -21,10 +21,13 @@ public class Messages extends NLS {
 
   public static String RefreshDiagramsCommandHandler_0;
   public static String RefreshDiagramsCommandHandler_1;
+  public static String RefreshDiagramsCommandHandler_10;
   public static String RefreshDiagramsCommandHandler_14;
   public static String RefreshDiagramsCommandHandler_15;
   public static String RefreshDiagramsCommandHandler_16;
   public static String RefreshDiagramsCommandHandler_2;
+  public static String RefreshDiagramsCommandHandler_4;
+  public static String RefreshDiagramsCommandHandler_7;
   public static String RefreshRepresentation_0;
   public static String RefreshRepresentation_1;
   public static String RefreshRepresentation_2;
