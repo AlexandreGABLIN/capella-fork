@@ -51,6 +51,16 @@ public class Messages extends NLS {
 
   public static String DiagramProcessChainPathPreferencePage_9;
 
+  public static String TitleBlockDialog_0;
+
+  public static String TitleBlockDialog_1;
+
+  public static String TitleBlockDialog_2;
+
+  public static String TitleBlockDialog_3;
+
+  public static String TitleBlockDialog_4;
+
   public static String TitleBlockPreferencePage_TimeZone;
 
   public static String TitleBlockPreferencePage_AddDefaultTitleBlock;
