@@ -28,6 +28,8 @@ public class Messages extends NLS {
   public static String TargetNull;
 
   public static String Df2ISEngine_0;
+  public static String InitializeTransitionActivity_2;
+  public static String InitializeTransitionActivity_3;
   public static String Rule_Event_CannotRetrieveInstanceRoleFromBound;
   public static String Rule_Event_FunctionalExchangeMultiAllocated;
   public static String Rule_Event_FunctionalExchangeMultiAllocatedConveyed;

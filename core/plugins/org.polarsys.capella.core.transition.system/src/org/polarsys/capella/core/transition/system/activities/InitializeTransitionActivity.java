@@ -25,11 +25,11 @@ import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.model.handler.helpers.CapellaAdapterHelper;
 import org.polarsys.capella.core.model.helpers.SystemEngineeringExt;
 import org.polarsys.capella.core.transition.common.constants.ITransitionConstants;
-import org.polarsys.capella.core.transition.common.constants.Messages;
 import org.polarsys.capella.core.transition.common.handlers.IHandler;
 import org.polarsys.capella.core.transition.common.handlers.scope.CompoundScopeRetriever;
 import org.polarsys.capella.core.transition.common.handlers.scope.RuleContainersScopeRetriever;
 import org.polarsys.capella.core.transition.common.handlers.scope.RuleRootElementsScopeRetriever;
+import org.polarsys.capella.core.transition.system.constants.Messages;
 import org.polarsys.capella.core.transition.system.handlers.attachment.CapellaDefaultAttachmentHandler;
 import org.polarsys.capella.core.transition.system.handlers.transformation.CapellaTransformationHandler;
 import org.polarsys.kitalpha.cadence.core.api.parameter.ActivityParameters;
@@ -105,7 +105,7 @@ public abstract class InitializeTransitionActivity
     if (!selection.isEmpty()) {
       EObject source = (EObject) selection.toArray()[0];
       if (!(source instanceof CapellaElement)) {
-        return new Status(IStatus.ERROR, Messages.Activity_Transition, "Input selection is not a CapellaElement");
+        return new Status(IStatus.ERROR, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transition, Messages.InitializeTransitionActivity_2);
       }
       ensureOpening(source);
     }
@@ -131,7 +131,7 @@ public abstract class InitializeTransitionActivity
           context.get(ITransitionConstants.TRANSITION_SOURCE_ROOT));
 
     } else {
-      return new Status(IStatus.ERROR, Messages.Activity_Transition, "Output model is invalid");
+      return new Status(IStatus.ERROR, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transition, Messages.InitializeTransitionActivity_3);
     }
 
     return Status.OK_STATUS;
