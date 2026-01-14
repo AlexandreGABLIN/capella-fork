@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.query.DRepresentationDescriptorQuery;
 import org.eclipse.sirius.business.api.session.Session;
@@ -188,7 +189,7 @@ public class RefreshDiagramsCommandHandler extends AbstractDiagramCommandHandler
       int severity = IStatus.OK;
       if (nbRefreshWithError > 0) {
         severity = IStatus.WARNING;
-        strBuilder.append(" and " + nbRefreshWithError + " representation(s) failed to refresh");
+        strBuilder.append(NLS.bind(Messages.RefreshDiagramsCommandHandler_2, nbRefreshWithError));
         if (representationNotLoadable.size() > 0) {
           strBuilder.append("\nNot loadable representation(s) (invalid)");
           representationNotLoadable.stream().forEach(repDesc -> {
