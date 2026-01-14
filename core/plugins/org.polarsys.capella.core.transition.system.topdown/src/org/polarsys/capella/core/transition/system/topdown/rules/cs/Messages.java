@@ -12,6 +12,12 @@ public class Messages extends NLS {
 	public static String PhysicalLinkRule_3;
 	public static String PhysicalLinkRule_4;
 
+	public static String PhysicalPathRule_0;
+
+	public static String PhysicalPathRule_1;
+
+	public static String PhysicalPathRule_2;
+
 	public static String PhysicalPortRule_0;
 	static {
 		// initialize resource bundle
