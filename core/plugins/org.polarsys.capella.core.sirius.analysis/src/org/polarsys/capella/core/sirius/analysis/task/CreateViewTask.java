@@ -308,7 +308,7 @@ public class CreateViewTask extends AbstractCommandTask {
     } else if (mapping instanceof AbstractNodeMapping) {
       domainClass = ((AbstractNodeMapping) mapping).getDomainClass();
     }
-    return StringUtil.lastSegment(domainClass, Arrays.asList(".", "::"));
+    return StringUtil.lastSegment(domainClass, Arrays.asList(Messages.CreateViewTask_0, Messages.CreateViewTask_1));
   }
 
   /**
