@@ -23,6 +23,7 @@ public class Messages extends NLS {
   public static String Error_versionCompliancy;
   public static String Error_needMigrationMessage;
   public static String Error_CorruptedMessage;
+  public static String ExportRepresentationsCommandLine_0;
   public static String workspace_in_use;
   public static String refresh_problem;
   public static String project;
