@@ -17,6 +17,8 @@ import org.eclipse.osgi.util.NLS;
 public class Messages extends NLS {
   private static final String BUNDLE_NAME = "org.polarsys.capella.core.sirius.ui.handlers.messages"; //$NON-NLS-1$
 
+  public static String RemoveHiddenElementsCommand_0;
+
   public static String RemoveHiddenElementsHandler_JobName;
 
   public static String RefreshDiagramsCommandHandler_0;
