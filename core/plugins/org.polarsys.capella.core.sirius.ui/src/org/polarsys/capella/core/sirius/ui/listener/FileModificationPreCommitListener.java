@@ -498,9 +498,9 @@ public class FileModificationPreCommitListener extends AbstractEditingDomainReso
     }
 
     final StringBuilder sb = new StringBuilder(
-        "Following files are not accessible (may result from a write access denied)\n");
+        Messages.FileModificationPreCommitListener_0);
     for (File f : filesWithNoWritePermission) {
-      sb.append(f.getAbsolutePath() + "\n");
+      sb.append(f.getAbsolutePath() + "\n"); //$NON-NLS-1$
     }
     CapellaSessionHelper.reportError(new Status(IStatus.ERROR,SiriusUIPlugin.getDefault().getPluginId(), sb.toString()));
     return Status.CANCEL_STATUS;
