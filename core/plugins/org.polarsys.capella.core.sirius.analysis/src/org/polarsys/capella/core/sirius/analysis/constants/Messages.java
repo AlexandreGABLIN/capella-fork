@@ -5,6 +5,27 @@ import org.eclipse.osgi.util.NLS;
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
 	public static String ColorNameConstants_1;
+	public static String IDNDToolNameConstants_0;
+	public static String IDNDToolNameConstants_1;
+	public static String IDNDToolNameConstants_10;
+	public static String IDNDToolNameConstants_11;
+	public static String IDNDToolNameConstants_12;
+	public static String IDNDToolNameConstants_13;
+	public static String IDNDToolNameConstants_14;
+	public static String IDNDToolNameConstants_15;
+	public static String IDNDToolNameConstants_16;
+	public static String IDNDToolNameConstants_17;
+	public static String IDNDToolNameConstants_18;
+	public static String IDNDToolNameConstants_19;
+	public static String IDNDToolNameConstants_2;
+	public static String IDNDToolNameConstants_20;
+	public static String IDNDToolNameConstants_3;
+	public static String IDNDToolNameConstants_4;
+	public static String IDNDToolNameConstants_5;
+	public static String IDNDToolNameConstants_6;
+	public static String IDNDToolNameConstants_7;
+	public static String IDNDToolNameConstants_8;
+	public static String IDNDToolNameConstants_9;
 	public static String IFilterNameConstants_330;
 	public static String IFilterNameConstants_331;
 	public static String IToolNameConstants_1015;
