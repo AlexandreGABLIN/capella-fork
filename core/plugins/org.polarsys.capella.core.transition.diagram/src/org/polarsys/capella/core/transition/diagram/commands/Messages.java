@@ -21,6 +21,19 @@ public class Messages extends NLS {
   private static final String BUNDLE_NAME = "org.polarsys.capella.core.transition.diagram.commands.messages"; //$NON-NLS-1$
   public static String DiagramTransitionCommand_DescriptionCount;
   public static String DiagramTransitionCommand_Name;
+  public static String DiagramTransitionRunnable_10;
+  public static String DiagramTransitionRunnable_11;
+  public static String DiagramTransitionRunnable_12;
+  public static String DiagramTransitionRunnable_13;
+  public static String DiagramTransitionRunnable_14;
+  public static String DiagramTransitionRunnable_15;
+  public static String DiagramTransitionRunnable_16;
+  public static String DiagramTransitionRunnable_20;
+  public static String DiagramTransitionRunnable_21;
+  public static String DiagramTransitionRunnable_22;
+  public static String DiagramTransitionRunnable_23;
+  public static String DiagramTransitionRunnable_24;
+  public static String DiagramTransitionRunnable_25;
   static {
     // initialize resource bundle
     NLS.initializeMessages(BUNDLE_NAME, Messages.class);
