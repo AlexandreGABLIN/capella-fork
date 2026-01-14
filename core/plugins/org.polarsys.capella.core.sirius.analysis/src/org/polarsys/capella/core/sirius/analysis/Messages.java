@@ -25,6 +25,7 @@ public class Messages extends NLS {
   public static String Diagram_TID_Provided;
   public static String Diagram_TID_Required;
   public static String Diagram_TID_Used;
+  public static String IDiagramNameConstants_0;
   public static String InformationServices_to;
   public static String InformationServices_Undefined;
   public static String InformationServices_PackageDependency_Title;
@@ -37,6 +38,10 @@ public class Messages extends NLS {
   public static String SequenceDiagramServices_3;
   public static String OpenRelatedDiagram_Message;
   public static String CreateRepresentationLabel;
+  public static String FunctionalChainServices_12;
+  public static String FunctionalChainServices_13;
+  public static String FunctionalChainServices_14;
+  public static String FunctionalChainServices_15;
   public static String TitleBlockServices_0;
   public static String TitleBlockServices_4;
 

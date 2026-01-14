@@ -1732,19 +1732,19 @@ public class FunctionalChainServices {
 
   public EObject accelerateOnSequenceLinkEdge(DEdge seqLinkEdge) {
     Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-    String messageDialogTitle = "Accelerator Information";
+    String messageDialogTitle = Messages.FunctionalChainServices_12;
 
     List<DNode> availableSourceFCIFViews = findFlatClosestFCIFunctionViewsAsSource(seqLinkEdge, true);
     if (availableSourceFCIFViews.isEmpty()) {
       MessageDialog.openInformation(shell, messageDialogTitle,
-          "There is not any Functional Chain Involvement Function as source for the selected sequence link or they are all in collapsed container.");
+          Messages.FunctionalChainServices_13);
       return null;
     }
 
     List<DNode> availableTargetFCIFViews = findFlatClosestFCIFunctionViewsAsTarget(seqLinkEdge, true);
     if (availableTargetFCIFViews.isEmpty()) {
       MessageDialog.openInformation(shell, messageDialogTitle,
-          "There is not any Functional Chain Involvement Function as target for the selected sequence link or they are all in collapsed container.");
+          Messages.FunctionalChainServices_14);
       return null;
     }
 
@@ -1790,7 +1790,7 @@ public class FunctionalChainServices {
     int targetSize = possibleTargetFCIFNodes.size();
     if (sourceSize > 1 || targetSize > 1) {
       MessageDialog.openInformation(shell, messageDialogTitle,
-          "Impossible to create Functional Chain Involvement Link due to ambiguity of source and target");
+          Messages.FunctionalChainServices_15);
     }
 
     if (sourceSize == 1 && targetSize == 1) {
