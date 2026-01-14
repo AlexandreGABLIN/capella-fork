@@ -232,10 +232,10 @@ public class RefreshDiagramsCommandHandler extends AbstractDiagramCommandHandler
 
     private String getRepDescInfo(DRepresentationDescriptor repDesc) {
       StringBuilder strBuilder = new StringBuilder();
-      strBuilder.append("name: " + repDesc.getName());
-      strBuilder.append(", uid: " + repDesc.getUid());
+      strBuilder.append(NLS.bind(Messages.RefreshDiagramsCommandHandler_14, repDesc.getName()));
+      strBuilder.append(NLS.bind(Messages.RefreshDiagramsCommandHandler_15, repDesc.getUid()));
       if (repDesc.getTarget() instanceof ModelElement) {
-        strBuilder.append(", target: " + ((ModelElement) repDesc.getTarget()).getLabel());
+        strBuilder.append(NLS.bind(Messages.RefreshDiagramsCommandHandler_16, ((ModelElement) repDesc.getTarget()).getLabel()));
       }
       return strBuilder.toString();
     }
