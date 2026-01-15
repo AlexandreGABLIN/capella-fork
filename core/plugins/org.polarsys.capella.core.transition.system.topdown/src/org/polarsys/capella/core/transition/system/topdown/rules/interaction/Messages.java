@@ -8,6 +8,7 @@ public class Messages extends NLS {
 	public static String AbstractCapabilityGeneralizationRule_1;
 	public static String AbstractCapabilityGeneralizationRule_2;
 	public static String AbstractCapabilityGeneralizationRule_3;
+	public static String FunctionCapabilityInvolvementRule_0;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

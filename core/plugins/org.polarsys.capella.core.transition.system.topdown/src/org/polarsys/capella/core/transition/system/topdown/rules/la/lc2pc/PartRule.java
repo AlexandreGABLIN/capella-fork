@@ -31,7 +31,6 @@ import org.polarsys.capella.core.model.helpers.BlockArchitectureExt;
 import org.polarsys.capella.core.model.helpers.ComponentExt;
 import org.polarsys.capella.core.model.helpers.ComponentPkgExt;
 import org.polarsys.capella.core.transition.common.constants.ITransitionConstants;
-import org.polarsys.capella.core.transition.common.constants.Messages;
 import org.polarsys.capella.core.transition.common.handlers.selection.EClassSelectionContext;
 import org.polarsys.capella.core.transition.common.handlers.selection.SelectionContextHandlerHelper;
 import org.polarsys.capella.core.transition.common.handlers.transformation.TransformationHandlerHelper;
@@ -52,7 +51,7 @@ public class PartRule extends org.polarsys.capella.core.transition.system.rules.
     boolean result =
         CsPackage.Literals.COMPONENT.isSuperTypeOf(TransformationHandlerHelper.getInstance(context).getTargetType(partSrc.getAbstractType(), context));
     if (!result) {
-      return new Status(IStatus.WARNING, Messages.Activity_Transition, "Type transitioned to ComponentPackage");
+      return new Status(IStatus.WARNING, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transition, Messages.PartRule_0);
     }
     return super.transformRequired(element, context);
   }
