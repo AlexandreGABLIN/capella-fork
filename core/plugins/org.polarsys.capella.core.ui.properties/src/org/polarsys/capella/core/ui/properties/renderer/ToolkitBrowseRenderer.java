@@ -65,7 +65,7 @@ public class ToolkitBrowseRenderer extends BrowseRenderer {
         right.remove(null);
 
         TransferTreeListDialog dialog = new TransferTreeListDialog(shell, "Selection wizard", //$NON-NLS-1$
-            "Select elements.");
+            Messages.ToolkitBrowseRenderer_0);
 
         dialog.setLeftInput(new ArrayList<EObject>(left), null);
         dialog.setRightInput(new ArrayList<EObject>(right), null);
