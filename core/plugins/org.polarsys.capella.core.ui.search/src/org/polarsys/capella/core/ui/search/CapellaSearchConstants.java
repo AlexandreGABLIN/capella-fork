@@ -15,7 +15,7 @@ package org.polarsys.capella.core.ui.search;
 public class CapellaSearchConstants {
 	public static final String CapellaSearchEmptyString = ""; //$NON-NLS-1$
 	public static final String CapellaReplaceQuery_Validation_Replacement_Null = Messages.CapellaSearchConstants_1;
-	public static final String CapellaSearchDialog_ShowIn_NotFound_Message = "The selected element is not present in the search result for pattern '%s'";
+	public static final String CapellaSearchDialog_ShowIn_NotFound_Message = Messages.CapellaSearchConstants_0;
 	public static final String CapellaSearchDialog_Title = Messages.CapellaSearchConstants_3;
 	public static final String CapellaAttribute_Description = Messages.CapellaSearchConstants_4;
 	public static final String CapellaAttribute_Name = Messages.CapellaSearchConstants_5;
@@ -33,18 +33,18 @@ public class CapellaSearchConstants {
 	public static final String CapellaSearchPage_Validation_Message_SearchMetaClass_Selection = Messages.CapellaSearchConstants_17;
 	public static final String CapellaSearchPage_Validation_Message_SearchFilter_Selection = Messages.CapellaSearchConstants_18;
 	public static final String CapellaSearchQuery_Search_Pattern_Not_Validated_Message = Messages.CapellaSearchConstants_19;
-	public static final String CapellaSearchResult_Label = "'%s' - %d occurrence(s) in %d element(s) of %d project(s)";
-	public static final String CapellaSearchResult_Label_With_Active_Filters = "'%s' - %d occurrence(s) in %d element(s) of %d project(s) - %d occurrence(s) filtered by %d active filter(s)";
-	public static final String ReplaceDialog_Finished_Or_Canceled_Message = "Replaced '%s' by '%s' for: %d occurrence(s) of %d element(s) in %d project(s)";
+	public static final String CapellaSearchResult_Label = Messages.CapellaSearchConstants_2;
+	public static final String CapellaSearchResult_Label_With_Active_Filters = Messages.CapellaSearchConstants_12;
+	public static final String ReplaceDialog_Finished_Or_Canceled_Message = Messages.CapellaSearchConstants_20;
 	public static final String ReplaceDialog_Label_Pattern = Messages.CapellaSearchConstants_23;
 	public static final String ReplaceDialog_Label_Replacement = Messages.CapellaSearchConstants_24;
 	public static final String ReplaceDialog_Label = Messages.CapellaSearchConstants_25;
 	public static final String ReplaceDialog_Title = Messages.CapellaSearchConstants_26;
 	public static final String ReplaceDialog_No_Match_Found_Message = Messages.CapellaSearchConstants_27;
-	public static final String ReplaceJob_SubTitle = "Replace %d occurrence(s) in the project: %s";
-	public static final String ReplaceJob_Title = "Replacing occurrences by '%s'...";
+	public static final String ReplaceJob_SubTitle = Messages.CapellaSearchConstants_21;
+	public static final String ReplaceJob_Title = Messages.CapellaSearchConstants_22;
 	public static final String SearchJob_SubTitle = Messages.CapellaSearchConstants_30;
-	public static final String SearchJob_Title = "Searching for pattern '%s'...";
+	public static final String SearchJob_Title = Messages.CapellaSearchConstants_28;
 	public static final String SelectAllButton_Name = Messages.CapellaSearchConstants_32;
 	public static final String DeselectAllButton_Name = Messages.CapellaSearchConstants_33;
 	public static final String RestoreDefaultsButton_Name = Messages.CapellaSearchConstants_34;
