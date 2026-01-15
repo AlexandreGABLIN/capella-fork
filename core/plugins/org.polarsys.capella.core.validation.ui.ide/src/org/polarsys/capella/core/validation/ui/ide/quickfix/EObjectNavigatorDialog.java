@@ -39,6 +39,7 @@ import org.eclipse.ui.PlatformUI;
 import org.polarsys.capella.common.mdsofa.common.constant.ICommonConstants;
 import org.polarsys.capella.common.ui.providers.MDEAdapterFactoryLabelProvider;
 import org.polarsys.capella.common.ui.toolkit.dialogs.AbstractMessageDialogWithViewer;
+import org.polarsys.capella.common.ui.toolkit.dialogs.Messages;
 import org.polarsys.capella.common.ui.toolkit.viewers.AbstractContextMenuFiller;
 import org.polarsys.capella.common.ui.toolkit.viewers.IViewerStyle;
 import org.polarsys.capella.common.ui.toolkit.viewers.TreeAndListViewer;
@@ -49,7 +50,7 @@ import org.polarsys.capella.core.validation.ui.ide.messages.QuickfixMessages;
 
 public class EObjectNavigatorDialog extends AbstractMessageDialogWithViewer {
 
-  public static final String EOBJECT_NAVIGATOR_DIALOG = "org.polarsys.capella.core.validation.ui.ide.quickfix.objectNavigator";
+  public static final String EOBJECT_NAVIGATOR_DIALOG = "org.polarsys.capella.core.validation.ui.ide.quickfix.objectNavigator"; //$NON-NLS-1$
   
   /**
    * Label for our combo box
