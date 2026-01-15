@@ -55,9 +55,9 @@ import org.polarsys.kitalpha.richtext.widget.helper.MDERichtextWidgetHelper;
  */
 public abstract class ElementDescriptionGroup {
 
-  private static final String FAMILY_DEFERRED_REFRESH = CapellaUIPropertiesRichtextPlugin.PLUGIN_ID + ".refreshJobFamily";
+  private static final String FAMILY_DEFERRED_REFRESH = CapellaUIPropertiesRichtextPlugin.PLUGIN_ID + ".refreshJobFamily"; //$NON-NLS-1$
 
-  private static final String FAMILY_LOAD_DATA_REFRESH = CapellaUIPropertiesRichtextPlugin.PLUGIN_ID + ".loadDataJobFamily";
+  private static final String FAMILY_LOAD_DATA_REFRESH = CapellaUIPropertiesRichtextPlugin.PLUGIN_ID + ".loadDataJobFamily"; //$NON-NLS-1$
 
   /**
    * Current edited semantic element.
