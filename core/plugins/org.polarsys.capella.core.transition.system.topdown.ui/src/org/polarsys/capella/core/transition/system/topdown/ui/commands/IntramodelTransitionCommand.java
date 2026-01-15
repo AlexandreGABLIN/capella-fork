@@ -26,7 +26,7 @@ public class IntramodelTransitionCommand extends org.polarsys.capella.core.trans
     super(selection, progressMonitor);
     
     addSharedParameter(new GenericParameter<IHandler>(ITransitionConstants.MERGE_DIFFERENCES_HANDLER,
-        new MergeUIDifferencesHandler(), "Merge UI wizard"));
+        new MergeUIDifferencesHandler(), Messages.IntramodelTransitionCommand_0));
   }
 
 }
