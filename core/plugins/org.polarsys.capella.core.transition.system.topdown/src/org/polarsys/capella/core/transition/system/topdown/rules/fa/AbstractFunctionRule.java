@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.polarsys.capella.core.data.fa.AbstractFunction;
 import org.polarsys.capella.core.data.helpers.fa.services.FunctionExt;
 import org.polarsys.capella.core.transition.common.constants.ITransitionConstants;
-import org.polarsys.capella.core.transition.common.constants.Messages;
 import org.polarsys.capella.core.transition.common.handlers.contextscope.ContextScopeHandlerHelper;
 import org.polarsys.capella.core.transition.system.topdown.handlers.attachment.AbstractFunctionAttachmentHelper;
 import org.polarsys.capella.core.transition.system.topdown.handlers.transformation.TopDownTransformationHelper;
@@ -59,7 +58,7 @@ public class AbstractFunctionRule extends org.polarsys.capella.core.transition.s
         return result;
       }
     }
-    return new Status(IStatus.WARNING, Messages.Activity_Transformation, "Sub Function already transitioned");
+    return new Status(IStatus.WARNING, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transformation, Messages.AbstractFunctionRule_0);
   }
 
   @Override
