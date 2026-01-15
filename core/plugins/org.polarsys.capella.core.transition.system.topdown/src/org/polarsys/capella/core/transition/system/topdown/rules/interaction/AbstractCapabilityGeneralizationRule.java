@@ -24,7 +24,6 @@ import org.polarsys.capella.common.helpers.EObjectLabelProviderHelper;
 import org.polarsys.capella.core.data.interaction.AbstractCapabilityGeneralization;
 import org.polarsys.capella.core.data.interaction.InteractionPackage;
 import org.polarsys.capella.core.transition.common.constants.ITransitionConstants;
-import org.polarsys.capella.core.transition.common.constants.Messages;
 import org.polarsys.capella.core.transition.common.handlers.attachment.AttachmentHelper;
 import org.polarsys.capella.core.transition.common.handlers.contextscope.ContextScopeHandlerHelper;
 import org.polarsys.capella.core.transition.common.handlers.transformation.TransformationHandlerHelper;
@@ -53,18 +52,18 @@ public class AbstractCapabilityGeneralizationRule extends AbstractCapellaElement
       }
 
       if (ce.getSuper() == null) {
-        return new Status(IStatus.WARNING, Messages.Activity_Transformation, "SourceNull");
+        return new Status(IStatus.WARNING, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transformation, Messages.AbstractCapabilityGeneralizationRule_0);
       }
       if (ce.getSub() == null) {
-        return new Status(IStatus.WARNING, Messages.Activity_Transformation, ".TargetNull");
+        return new Status(IStatus.WARNING, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transformation, Messages.AbstractCapabilityGeneralizationRule_1);
       }
 
       if (!TransformationHandlerHelper.getInstance(context).isOrWillBeTransformed(ce.getSuper(), context).isOK()) {
-        return new Status(IStatus.WARNING, Messages.Activity_Transformation,
-            NLS.bind(".SourceBoundNotTransitioned", EObjectLabelProviderHelper.getText(ce.getSuper())));
+        return new Status(IStatus.WARNING, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transformation,
+            NLS.bind(Messages.AbstractCapabilityGeneralizationRule_2, EObjectLabelProviderHelper.getText(ce.getSuper())));
       }
       if (!TransformationHandlerHelper.getInstance(context).isOrWillBeTransformed(ce.getSub(), context).isOK()) {
-        return new Status(IStatus.WARNING, Messages.Activity_Transformation, NLS.bind(".Target bound not transitioned", EObjectLabelProviderHelper.getText(ce.getSub())));
+        return new Status(IStatus.WARNING, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transformation, NLS.bind(Messages.AbstractCapabilityGeneralizationRule_3, EObjectLabelProviderHelper.getText(ce.getSub())));
       }
     }
     return result;
