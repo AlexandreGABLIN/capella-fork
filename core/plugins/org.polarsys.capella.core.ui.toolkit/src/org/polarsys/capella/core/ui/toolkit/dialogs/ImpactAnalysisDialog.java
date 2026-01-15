@@ -33,6 +33,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.PlatformUI;
 import org.polarsys.capella.common.mdsofa.common.constant.ICommonConstants;
 import org.polarsys.capella.common.ui.toolkit.dialogs.AbstractViewerDialog;
+import org.polarsys.capella.common.ui.toolkit.dialogs.Messages;
 import org.polarsys.capella.common.ui.toolkit.viewers.AbstractContextMenuFiller;
 import org.polarsys.capella.common.ui.toolkit.viewers.IViewerStyle;
 import org.polarsys.capella.common.ui.toolkit.viewers.TreeAndListViewer;
@@ -46,7 +47,7 @@ import org.polarsys.capella.core.model.handler.command.CapellaResourceHelper;
  */
 public class ImpactAnalysisDialog extends AbstractViewerDialog {
 
-  public static final String IMPACT_ANALYSIS_DIALOG = "org.polarsys.capella.core.ui.toolkit.dialogs.impactAnalysis";
+  public static final String IMPACT_ANALYSIS_DIALOG = "org.polarsys.capella.core.ui.toolkit.dialogs.impactAnalysis"; //$NON-NLS-1$
 
   /**
    * Impact analysis label provider.
