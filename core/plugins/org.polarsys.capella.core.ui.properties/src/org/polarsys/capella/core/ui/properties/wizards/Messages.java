@@ -23,6 +23,8 @@ public class Messages extends NLS {
   public static String CustomWizardHandler_Command_Title;
   public static String CapellaElement_SectionLabel;
 
+  public static String EditCapellaCustomPropertyWizard_0;
+
   // Help on wizard
   
   public static String editCapellaCustomPropertyWizardPage_Description;
