@@ -29,6 +29,10 @@ public class Messages extends NLS {
   public static String ReferencesTableField_DeleteCommand_Label;
   public static String ReferencesTableField_SelectionElementDialog_Title;
   public static String BooleanValueGroup_Value_Label;
+
+  public static String ConstraintReferenceField_0;
+
+  public static String ConstraintReferenceField_1;
   public static String TextValueGroup_Value_Label;
   public static String TextValueGroup_ValueResetBtn_Label;
 
