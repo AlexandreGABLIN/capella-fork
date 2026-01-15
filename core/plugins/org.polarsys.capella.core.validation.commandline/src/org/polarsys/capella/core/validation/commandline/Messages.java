@@ -20,6 +20,7 @@ public class Messages extends NLS {
   private static final String BUNDLE_NAME = "org.polarsys.capella.core.validation.commandline.messages"; //$NON-NLS-1$
   public static String resource_prefix;
   public static String resultsFileName;
+  public static String ValidationCommandLine_2;
   public static String validationStatus;
   static {
     // initialize resource bundle
