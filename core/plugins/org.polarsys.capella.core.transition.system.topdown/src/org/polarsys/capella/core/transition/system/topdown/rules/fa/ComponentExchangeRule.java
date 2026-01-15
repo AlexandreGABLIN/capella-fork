@@ -26,7 +26,6 @@ import org.polarsys.capella.core.data.fa.FaPackage;
 import org.polarsys.capella.core.data.oa.Entity;
 import org.polarsys.capella.core.model.helpers.PortExt;
 import org.polarsys.capella.core.transition.common.constants.ITransitionConstants;
-import org.polarsys.capella.core.transition.common.constants.Messages;
 import org.polarsys.capella.core.transition.common.handlers.contextscope.ContextScopeHandlerHelper;
 import org.polarsys.capella.core.transition.common.handlers.selection.SelectionContextHandlerHelper;
 import org.polarsys.capella.core.transition.common.handlers.transformation.TransformationHandlerHelper;
@@ -71,19 +70,19 @@ public class ComponentExchangeRule extends org.polarsys.capella.core.transition.
       ComponentExchange element = (ComponentExchange) element_p;
 
       if (!ContextScopeHandlerHelper.getInstance(context_p).contains(ITransitionConstants.SOURCE_SCOPE, element_p, context_p)) {
-        return new Status(IStatus.WARNING, Messages.Activity_Transition, "not in scope");
+        return new Status(IStatus.WARNING, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transition, Messages.ComponentExchangeRule_0);
       }
       if (element.getSource() == null) {
-        return new Status(IStatus.WARNING, Messages.Activity_Transition, "source null");
+        return new Status(IStatus.WARNING, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transition, Messages.ComponentExchangeRule_1);
       }
       if (element.getTarget() == null) {
-        return new Status(IStatus.WARNING, Messages.Activity_Transition, "target null");
+        return new Status(IStatus.WARNING, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transition, Messages.ComponentExchangeRule_2);
       }
       if (!TransformationHandlerHelper.getInstance(context_p).isOrWillBeTransformed(element.getSource(), context_p).isOK()) {
-        return new Status(IStatus.WARNING, Messages.Activity_Transition, "source");
+        return new Status(IStatus.WARNING, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transition, Messages.ComponentExchangeRule_3);
       }
       if (!TransformationHandlerHelper.getInstance(context_p).isOrWillBeTransformed(element.getTarget(), context_p).isOK()) {
-        return new Status(IStatus.WARNING, Messages.Activity_Transition, "target");
+        return new Status(IStatus.WARNING, org.polarsys.capella.core.transition.common.constants.Messages.Activity_Transition, Messages.ComponentExchangeRule_4);
       }
       java.util.Collection<EObject> transfoSources = (java.util.Collection<EObject>) context_p.get(ITransitionConstants.TRANSITION_SOURCES);
       if (transfoSources.contains(element_p)) {
